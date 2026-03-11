@@ -30,6 +30,19 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Typewriter CSS -->
+  <style>
+    .cursor {
+      display: inline-block;
+      animation: blink 1s infinite;
+      color: var(--primary, #6366f1);
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -57,7 +70,10 @@
       <div class="hero-text">
         <span class="greeting">Hello, I'm</span>
         <h1>Okello Elly</h1>
-        <h2 class="typewriter"><span class="typed-text"></span><span class="cursor">|</span></h2>
+        <h2 class="typewriter">
+          <span class="typed-text"></span>
+          <span class="cursor">|</span>
+        </h2>
         <p>Building intelligent systems, scalable applications, and practical digital solutions that solve real-world problems.</p>
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -225,6 +241,78 @@
     <a href="#home" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
   </footer>
 
-  <script src="src/main.js"></script>
+  <!-- Typewriter Script - Embedded directly -->
+  <script>
+    // Typewriter effect
+    document.addEventListener('DOMContentLoaded', function() {
+      const typedTextElement = document.querySelector('.typed-text');
+      if (typedTextElement) {
+        const phrases = ['Software Engineer', 'Innovator', 'Full-Stack Developer', 'Problem Solver'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function type() {
+          const currentPhrase = phrases[phraseIndex];
+          if (isDeleting) {
+            typedTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+          } else {
+            typedTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+          }
+          
+          let speed = isDeleting ? 50 : 100;
+          
+          if (!isDeleting && charIndex === currentPhrase.length) {
+            speed = 2000;
+            isDeleting = true;
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            speed = 500;
+          }
+          
+          setTimeout(type, speed);
+        }
+        
+        type();
+      }
+      
+      // Update year
+      const yearElement = document.getElementById('year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+      
+      // Theme toggle
+      const themeToggle = document.getElementById('themeToggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          document.body.classList.toggle('light-mode');
+          const isLight = document.body.classList.contains('light-mode');
+          themeToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+      }
+      
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href && href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              const headerHeight = document.querySelector('header').offsetHeight;
+              const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+              window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+          }
+        });
+      });
+    });
+    
+    console.log('Portfolio Loaded!');
+  </script>
 </body>
 </html>
