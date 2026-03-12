@@ -21,6 +21,8 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 - 🧪 Project filter chips and skills depth bars
 - 🧰 Brand/tool strip and delivery process section
 - 🧭 SEO helpers (sitemap + robots) and social preview image
+- 🧷 Custom favicon and Apple touch icon
+- ✅ Contact form status with aria-live support
 
 ## Sections
 
