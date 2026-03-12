@@ -761,8 +761,6 @@ nav { display: flex; align-items: center; gap: 18px; }
 .form-field input:focus,
 .form-field textarea:focus { border-color: var(--primary); outline: none; }
 
-.form-note { color: var(--text-muted); font-size: 0.8rem; margin-top: 10px; }
-
 .contact-info { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
 
 .contact-item {

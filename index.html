@@ -12,7 +12,13 @@
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Elly | Software Engineer">
   <meta property="og:description" content="Building intelligent systems, scalable applications, and practical digital solutions.">
-  <meta property="og:image" content="assets/images/profile.png">
+  <meta property="og:image" content="assets/images/og-image.svg">
+  <meta property="og:site_name" content="Elly Portfolio">
+  <meta property="og:url" content="https://okelloelly.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elly | Software Engineer">
+  <meta name="twitter:description" content="Building intelligent systems, scalable applications, and practical digital solutions.">
+  <meta name="twitter:image" content="assets/images/og-image.svg">
   <meta property="og:type" content="website">
 
   <title>Elly | Software Engineer</title>
@@ -118,7 +124,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="assets/images/profile.png" alt="Okello Elly portrait" fetchpriority="high" width="280" height="280">
+          <img src="assets/images/profile.png" alt="Okello Elly portrait" fetchpriority="high" width="280" height="280" decoding="async">
           <div class="hero-orbit" aria-hidden="true"></div>
         </div>
       </div>
@@ -331,7 +337,7 @@
 
         <div class="project-card" data-reveal data-category="ai">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" alt="Teachable Machine project preview" loading="lazy" decoding="async" width="900" height="600">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" srcset="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop 600w, https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&h=600&fit=crop 900w, https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=800&fit=crop 1200w" sizes="(max-width: 768px) 100vw, 900px" alt="Teachable Machine project preview" loading="lazy" decoding="async" width="900" height="600">
           </div>
           <div class="project-info">
             <h3><i class="fas fa-robot"></i> Teachable Machine</h3>
@@ -352,7 +358,7 @@
 
         <div class="project-card" data-reveal data-category="interactive">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=400&fit=crop" alt="Be My Valentine project preview" loading="lazy" decoding="async" width="900" height="600">
+            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=400&fit=crop" srcset="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=400&fit=crop 600w, https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=900&h=600&fit=crop 900w, https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=1200&h=800&fit=crop 1200w" sizes="(max-width: 768px) 100vw, 900px" alt="Be My Valentine project preview" loading="lazy" decoding="async" width="900" height="600">
           </div>
           <div class="project-info">
             <h3><i class="fas fa-heart"></i> Be My Valentine</h3>
@@ -516,7 +522,6 @@
               <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
-            <p class="form-note">This form opens your email client. No backend required.</p>
           </form>
           <div class="contact-info">
             <a href="mailto:okelloelly@zetech.ac.ke" class="contact-item"><i class="fas fa-envelope"></i><span>okelloelly@zetech.ac.ke</span></a>
@@ -550,7 +555,7 @@
   </footer>
 
   <div class="modal" id="modal-leanlight" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="leanlight-title">
-    <div class="modal-content">
+    <div class="modal-content" tabindex="-1">
       <button class="modal-close" data-modal-close aria-label="Close case study">&times;</button>
       <h3 id="leanlight-title">Leanlight Case Study</h3>
       <p><strong>Challenge:</strong> Students needed a clean path to curated content and progress tracking.</p>
@@ -560,7 +565,7 @@
   </div>
 
   <div class="modal" id="modal-teachable" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="teachable-title">
-    <div class="modal-content">
+    <div class="modal-content" tabindex="-1">
       <button class="modal-close" data-modal-close aria-label="Close case study">&times;</button>
       <h3 id="teachable-title">Teachable Machine Case Study</h3>
       <p><strong>Challenge:</strong> Make AI feel approachable with an interactive demo.</p>
@@ -570,7 +575,7 @@
   </div>
 
   <div class="modal" id="modal-valentine" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="valentine-title">
-    <div class="modal-content">
+    <div class="modal-content" tabindex="-1">
       <button class="modal-close" data-modal-close aria-label="Close case study">&times;</button>
       <h3 id="valentine-title">Be My Valentine Case Study</h3>
       <p><strong>Challenge:</strong> Create a playful, shareable user experience.</p>
@@ -737,33 +742,57 @@
 
       const modalTriggers = document.querySelectorAll('[data-modal-open]');
       const modalCloses = document.querySelectorAll('[data-modal-close]');
+      let lastFocusedElement = null;
+
+      const openModal = function(modal) {
+        if (!modal) return;
+        lastFocusedElement = document.activeElement;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        const focusTarget = modal.querySelector('[data-modal-close]') || modal.querySelector('.modal-content');
+        if (focusTarget) focusTarget.focus();
+      };
+
+      const closeModal = function(modal) {
+        if (!modal) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        if (lastFocusedElement) lastFocusedElement.focus();
+      };
 
       modalTriggers.forEach(function(trigger) {
         trigger.addEventListener('click', function() {
           const modalId = this.getAttribute('data-modal-open');
           const modal = document.getElementById('modal-' + modalId);
-          if (modal) {
-            modal.classList.add('is-open');
-            modal.setAttribute('aria-hidden', 'false');
-          }
+          openModal(modal);
         });
       });
 
       modalCloses.forEach(function(closeBtn) {
         closeBtn.addEventListener('click', function() {
-          const modal = this.closest('.modal');
-          if (modal) {
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
-          }
+          closeModal(this.closest('.modal'));
         });
       });
 
       document.querySelectorAll('.modal').forEach(function(modal) {
         modal.addEventListener('click', function(event) {
           if (event.target === modal) {
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
+            closeModal(modal);
+          }
+        });
+
+        modal.addEventListener('keydown', function(event) {
+          if (event.key !== 'Tab') return;
+          const focusable = modal.querySelectorAll('button, [href], input, textarea, [tabindex]:not([tabindex=\"-1\"])');
+          if (!focusable.length) return;
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
           }
         });
       });
@@ -771,8 +800,7 @@
       document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
           document.querySelectorAll('.modal.is-open').forEach(function(modal) {
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
+            closeModal(modal);
           });
         }
       });
