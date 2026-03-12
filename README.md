@@ -14,16 +14,21 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 - 💼 Services section
 - 📄 CV/Resume download
 - 📬 Contact form with social links
+- ✨ Highlights, current focus, and call-to-action sections
+- 🧭 Scroll reveal animations with reduced-motion support
 
 ## Sections
 
 - **Home** - Hero with profile image and typewriter effect
 - **About** - Personal introduction and skills
+- **Highlights** - Quick proof and focus areas
 - **Education** - Academic background (St. Joseph's School Rapogi 2020-2023, Zetech University 2025-2027)
 - **Experience** - Work history
+- **Currently** - Focus, availability, and working areas
 - **Services** - What I can do for you
 - **Projects** - Featured projects (Leanlight, Teachable Machine, Be My Valentine)
 - **CV** - Download resume
+- **CTA** - Project call-to-action
 - **Contact** - Get in touch
 
 ## Technologies Used
