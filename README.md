@@ -19,8 +19,8 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 
 - **Home** - Hero with profile image and typewriter effect
 - **About** - Personal introduction and skills
-- **Education** - Academic background (Zetech University)
-- **Experience** - Work history and internships
+- **Education** - Academic background (St. Joseph's School Rapogi 2020-2023, Zetech University 2025-2027)
+- **Experience** - Work history
 - **Services** - What I can do for you
 - **Projects** - Featured projects (Leanlight, Teachable Machine, Be My Valentine)
 - **CV** - Download resume
