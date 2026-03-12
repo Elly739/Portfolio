@@ -18,6 +18,8 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 - 🧭 Scroll reveal animations with reduced-motion support
 - 🧩 Project case study modals
 - 💬 Testimonials section
+- 🧪 Project filter chips and skills depth bars
+- 🧰 Brand/tool strip and delivery process section
 
 ## Sections
 
@@ -30,6 +32,9 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 - **Currently** - Focus, availability, and working areas
 - **Services** - What I can do for you
 - **Projects** - Featured projects (Leanlight, Teachable Machine, Be My Valentine)
+- **Brand Strip** - Tools and platforms
+- **Work Process** - Delivery stages
+- **Skills Depth** - Visual skill proficiency
 - **Testimonials** - Feedback highlights
 - **CV** - Download resume
 - **CTA** - Project call-to-action

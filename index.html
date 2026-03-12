@@ -75,20 +75,32 @@
   <main id="main">
     <section id="home" class="hero">
       <div class="hero-container">
-        <div class="hero-image">
-          <img src="assets/images/profile.png" alt="Okello Elly portrait" fetchpriority="high" width="280" height="280">
-        </div>
         <div class="hero-text">
+          <div class="hero-pill">Available for selected projects</div>
           <span class="greeting">Hello, I am</span>
           <h1>Okello Elly</h1>
           <h2 class="typewriter" aria-live="polite">
             <span class="typed-text"></span>
             <span class="cursor">|</span>
           </h2>
-          <p>Building intelligent systems, scalable applications, and practical digital solutions that solve real-world problems.</p>
+          <p>Building intelligent systems, scalable applications, and premium digital experiences that feel effortless to use.</p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View Projects</a>
             <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="stat-value">6+</span>
+              <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-value">24–48h</span>
+              <span class="stat-label">Response Time</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-value">AI • Cloud</span>
+              <span class="stat-label">Core Focus</span>
+            </div>
           </div>
           <div class="social-links">
             <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
@@ -104,6 +116,10 @@
               <i class="fab fa-x-twitter"></i>
             </a>
           </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/images/profile.png" alt="Okello Elly portrait" fetchpriority="high" width="280" height="280">
+          <div class="hero-orbit" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -285,8 +301,14 @@
     <section id="projects" class="projects">
       <div class="container">
         <h2 class="section-title">Projects</h2>
+        <div class="project-filters" role="tablist" aria-label="Project filters">
+          <button class="filter-chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-chip" data-filter="web" role="tab" aria-selected="false">Web</button>
+          <button class="filter-chip" data-filter="ai" role="tab" aria-selected="false">AI/ML</button>
+          <button class="filter-chip" data-filter="interactive" role="tab" aria-selected="false">Interactive</button>
+        </div>
 
-        <div class="project-card" data-reveal>
+        <div class="project-card" data-reveal data-category="web">
           <div class="project-image">
             <img src="assets/images/learnlight.png" alt="Leanlight project preview" loading="lazy" decoding="async" width="900" height="600">
           </div>
@@ -307,7 +329,7 @@
           </div>
         </div>
 
-        <div class="project-card" data-reveal>
+        <div class="project-card" data-reveal data-category="ai">
           <div class="project-image">
             <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" alt="Teachable Machine project preview" loading="lazy" decoding="async" width="900" height="600">
           </div>
@@ -328,7 +350,7 @@
           </div>
         </div>
 
-        <div class="project-card" data-reveal>
+        <div class="project-card" data-reveal data-category="interactive">
           <div class="project-image">
             <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=400&fit=crop" alt="Be My Valentine project preview" loading="lazy" decoding="async" width="900" height="600">
           </div>
@@ -346,6 +368,68 @@
               <button class="btn btn-ghost" data-modal-open="valentine">Case Study</button>
               <a href="https://github.com/Elly739/BeMyValentine" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-strip">
+      <div class="container">
+        <p class="section-subtitle">Trusted tools & platforms</p>
+        <div class="brand-grid" data-reveal>
+          <span>Vite</span>
+          <span>TensorFlow</span>
+          <span>Node.js</span>
+          <span>GitHub</span>
+          <span>Figma</span>
+          <span>Vercel</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <h2 class="section-title">Work Process</h2>
+        <div class="process-grid">
+          <div class="process-card" data-reveal>
+            <h3>01. Discover</h3>
+            <p>Clarify goals, constraints, and success metrics.</p>
+          </div>
+          <div class="process-card" data-reveal>
+            <h3>02. Design</h3>
+            <p>Create structure, flows, and visual direction.</p>
+          </div>
+          <div class="process-card" data-reveal>
+            <h3>03. Build</h3>
+            <p>Implement with clean, scalable code.</p>
+          </div>
+          <div class="process-card" data-reveal>
+            <h3>04. Launch</h3>
+            <p>Ship, validate, and optimize with feedback.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-depth">
+      <div class="container">
+        <h2 class="section-title">Skills Depth</h2>
+        <div class="skills-bars">
+          <div class="skill-row" data-reveal>
+            <div class="skill-label">Frontend Engineering</div>
+            <div class="skill-bar"><span style="width: 88%"></span></div>
+          </div>
+          <div class="skill-row" data-reveal>
+            <div class="skill-label">Backend & APIs</div>
+            <div class="skill-bar"><span style="width: 78%"></span></div>
+          </div>
+          <div class="skill-row" data-reveal>
+            <div class="skill-label">Cloud & DevOps</div>
+            <div class="skill-bar"><span style="width: 72%"></span></div>
+          </div>
+          <div class="skill-row" data-reveal>
+            <div class="skill-label">AI/ML Systems</div>
+            <div class="skill-bar"><span style="width: 70%"></span></div>
           </div>
         </div>
       </div>
@@ -624,6 +708,31 @@
         } else {
           revealItems.forEach(function(item) { item.classList.add('is-visible'); });
         }
+      }
+
+      const filterButtons = document.querySelectorAll('.filter-chip');
+      const projectCards = document.querySelectorAll('.project-card');
+      if (filterButtons.length && projectCards.length) {
+        filterButtons.forEach(function(button) {
+          button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            filterButtons.forEach(function(btn) {
+              btn.classList.remove('is-active');
+              btn.setAttribute('aria-selected', 'false');
+            });
+            this.classList.add('is-active');
+            this.setAttribute('aria-selected', 'true');
+
+            projectCards.forEach(function(card) {
+              const category = card.getAttribute('data-category');
+              if (filter === 'all' || category === filter) {
+                card.style.display = '';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
       }
 
       const modalTriggers = document.querySelectorAll('[data-modal-open]');
