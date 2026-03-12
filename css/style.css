@@ -7,7 +7,7 @@
   --bg-secondary: #111827;
   --text-primary: #f8fafc;
   --text-secondary: #cbd5f5;
-  --text-muted: #94a3b8;
+  --text-muted: #aab4c6;
   --gradient-primary: linear-gradient(135deg, #14b8a6 0%, #22d3ee 45%, #f97316 100%);
   --gradient-hero: radial-gradient(circle at top, rgba(34, 211, 238, 0.2), transparent 60%), linear-gradient(135deg, #0b1120 0%, #0f172a 45%, #111827 100%);
   --gradient-card: linear-gradient(145deg, #0f172a 0%, #111827 100%);
@@ -94,6 +94,9 @@ nav { display: flex; align-items: center; gap: 18px; }
   font-weight: 500;
   font-size: 0.9rem;
   transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav-link:hover { color: var(--text-primary); }
@@ -280,7 +283,7 @@ nav { display: flex; align-items: center; gap: 18px; }
 }
 
 .stat-label {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 
@@ -612,6 +615,19 @@ nav { display: flex; align-items: center; gap: 18px; }
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .filter-chip.is-active,
@@ -962,6 +978,7 @@ body.light-mode {
   --text-secondary: #475569;
   --glass-bg: rgba(15, 23, 42, 0.06);
   --glass-border: rgba(15, 23, 42, 0.12);
+  --text-muted: #5f6b7a;
 }
 
 body.light-mode .hero { background: linear-gradient(135deg, #e0f2fe 0%, #fef3c7 100%); }
