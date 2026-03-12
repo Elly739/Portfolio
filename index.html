@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,30 +7,31 @@
   <meta name="keywords" content="software engineer, developer, portfolio, web development, AI, machine learning, cloud computing">
   <meta name="author" content="Okello Elly">
   <meta name="theme-color" content="#6366f1">
-  
+  <meta name="color-scheme" content="dark light">
+
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Elly | Software Engineer">
   <meta property="og:description" content="Building intelligent systems, scalable applications, and practical digital solutions.">
   <meta property="og:image" content="assets/images/profile.png">
   <meta property="og:type" content="website">
-  
+
   <title>Elly | Software Engineer</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/profile.png">
   <link rel="apple-touch-icon" href="assets/images/profile.png">
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
-  
+
   <!-- Typewriter CSS -->
   <style>
     .cursor {
@@ -45,16 +46,25 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">Elly</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="logo"><a href="#home">Elly</a></div>
+    <nav aria-label="Primary">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="primaryNav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-list" id="primaryNav">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#education">Education</a></li>
+        <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#cv">CV</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </nav>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -62,240 +72,342 @@
     </button>
   </header>
 
-  <section id="home" class="hero">
-    <div class="hero-container">
-      <div class="hero-image">
-        <img src="assets/images/profile.png" alt="Okello Elly">
-      </div>
-      <div class="hero-text">
-        <span class="greeting">Hello, I'm</span>
-        <h1>Okello Elly</h1>
-        <h2 class="typewriter">
-          <span class="typed-text"></span>
-          <span class="cursor">|</span>
-        </h2>
-        <p>Building intelligent systems, scalable applications, and practical digital solutions that solve real-world problems.</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-outline">Contact Me</a>
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-image">
+          <img src="assets/images/profile.png" alt="Okello Elly portrait" fetchpriority="high" width="280" height="280">
         </div>
-        <div class="social-links">
-          <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/chairman.official/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/OkelloElly018" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-        </div>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <p><i class="fas fa-rocket"></i> I am a driven <span class="highlight">software engineer</span> and innovator focused on designing and building systems that solve meaningful, real-world problems.</p>
-        <p><i class="fas fa-code"></i> My expertise spans across <span class="highlight">cloud computing</span>, <span class="highlight">data engineering</span>, <span class="highlight">networking</span>, and <span class="highlight">AI-powered systems</span>.</p>
-        <p><i class="fas fa-lightbulb"></i> My philosophy: <span class="highlight">build with intention</span>, <span class="highlight">innovate with discipline</span>, and remain at the edge of technology.</p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
-        <div class="skill-card"><i class="fab fa-node-js"></i><span>Node.js</span></div>
-        <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
-        <div class="skill-card"><i class="fas fa-cloud"></i><span>Cloud</span></div>
-        <div class="skill-card"><i class="fas fa-brain"></i><span>AI/ML</span></div>
-        <div class="skill-card"><i class="fas fa-database"></i><span>Data</span></div>
-    </div>
-  </section>
-
-  <section id="services" class="services">
-    <div class="container">
-      <h2 class="section-title">Services</h2>
-      <p class="section-subtitle">What I Can Do For You</p>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-code"></i></div>
-          <h3>Web Development</h3>
-          <p>Building modern, responsive websites and web applications.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-server"></i></div>
-          <h3>Backend Development</h3>
-          <p>Creating robust APIs and server-side solutions.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-brain"></i></div>
-          <h3>AI Solutions</h3>
-          <p>Implementing machine learning models and intelligent systems.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-cloud"></i></div>
-          <h3>Cloud Services</h3>
-          <p>Designing and deploying cloud infrastructure.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-database"></i></div>
-          <h3>Data Engineering</h3>
-          <p>Building data pipelines and analytics systems.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-tools"></i></div>
-          <h3>Technical Consulting</h3>
-          <p>Providing expert advice on software architecture.</p>
-        </div>
-    </div>
-  </section>
-
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      
-      <!-- Project 1: Leanlight -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/images/learnlight.png" alt="Leanlight">
-        </div>
-        <div class="project-info">
-          <h3><i class="fas fa-graduation-cap"></i> Leanlight</h3>
-          <p>A platform for students to access curated learning content and track their progress.</p>
-          <div class="tech-stack">
-            <span>Node.js</span><span>Vite</span><span>HTML</span><span>CSS</span><span>JS</span>
+        <div class="hero-text">
+          <span class="greeting">Hello, I am</span>
+          <h1>Okello Elly</h1>
+          <h2 class="typewriter" aria-live="polite">
+            <span class="typed-text"></span>
+            <span class="cursor">|</span>
+          </h2>
+          <p>Building intelligent systems, scalable applications, and practical digital solutions that solve real-world problems.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
           </div>
-          <a href="https://github.com/Elly739/learnlight" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-        </div>
-
-      <!-- Project 2: Teachable Machine -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" alt="Teachable Machine">
-        </div>
-        <div class="project-info">
-          <h3><i class="fas fa-robot"></i> Teachable Machine</h3>
-          <p>An interactive image classification model built with Google's Teachable Machine.</p>
-          <div class="tech-stack">
-            <span>TensorFlow</span><span>ML</span><span>HTML</span><span>JavaScript</span>
+          <div class="social-links">
+            <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/chairman.official/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/OkelloElly018" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter">
+              <i class="fab fa-x-twitter"></i>
+            </a>
           </div>
-          <a href="https://github.com/Elly739/Teachable-Machine-Image-Model" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
         </div>
-
-      <!-- Project 3: Be My Valentine -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=400&fit=crop" alt="Be My Valentine">
-        </div>
-        <div class="project-info">
-          <h3><i class="fas fa-heart"></i> Be My Valentine</h3>
-          <p>A fun and interactive Valentine's Day themed web application.</p>
-          <div class="tech-stack">
-            <span>TeX</span><span>HTML</span><span>Python</span>
-          </div>
-          <a href="https://github.com/Elly739/BeMyValentine" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-        </div>
-
-    </div>
-  </section>
-
-  <section id="cv" class="cv">
-    <div class="container">
-      <h2 class="section-title">My Resume</h2>
-      <p class="section-subtitle">Download my CV to learn more</p>
-      <div class="cv-card">
-        <div class="cv-icon"><i class="fas fa-file-pdf"></i></div>
-        <h3>Okello Elly - Resume</h3>
-        <p>Software Engineer & Innovator</p>
-        <a href="assets/pdf/RESUME.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
       </div>
-  </section>
+    </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-card">
-        <h3>Let's Connect!</h3>
-        <p>Feel free to reach out for collaborations or just to say hello.</p>
-        <div class="contact-info">
-          <a href="mailto:okelloelly@zetech.ac.ke" class="contact-item"><i class="fas fa-envelope"></i><span>okelloelly@zetech.ac.ke</span></a>
-          <a href="tel:+254769182575" class="contact-item"><i class="fas fa-phone"></i><span>+254 769182575</span></a>
-          <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fab fa-linkedin"></i><span>elly-okello</span></a>
-          <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fab fa-github"></i><span>@Elly739</span></a>
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <p><i class="fas fa-rocket"></i> I am a driven <span class="highlight">software engineer</span> and innovator focused on designing and building systems that solve meaningful, real-world problems.</p>
+          <p><i class="fas fa-code"></i> My expertise spans across <span class="highlight">cloud computing</span>, <span class="highlight">data engineering</span>, <span class="highlight">networking</span>, and <span class="highlight">AI-powered systems</span>.</p>
+          <p><i class="fas fa-lightbulb"></i> My philosophy: <span class="highlight">build with intention</span>, <span class="highlight">innovate with discipline</span>, and remain at the edge of technology.</p>
         </div>
-        <div class="social-links-center">
-          <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/chairman.official/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/OkelloElly018" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+
+        <div class="skills-grid">
+          <div class="skill-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
+          <div class="skill-card"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+          <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+          <div class="skill-card"><i class="fas fa-cloud"></i><span>Cloud</span></div>
+          <div class="skill-card"><i class="fas fa-brain"></i><span>AI/ML</span></div>
+          <div class="skill-card"><i class="fas fa-database"></i><span>Data</span></div>
         </div>
-    </div>
-  </section>
+      </div>
+    </section>
+
+    <section id="education" class="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3><i class="fas fa-graduation-cap"></i> Bachelor of Science in Software Engineering</h3>
+              <p class="timeline-school">Zetech University</p>
+              <p class="timeline-date"><i class="fas fa-calendar"></i> 2025 - 2027</p>
+              <p>Focused on software architecture, data structures, algorithms, and modern development practices.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3><i class="fas fa-school"></i> High School</h3>
+              <p class="timeline-school">St. Joseph's School Rapogi</p>
+              <p class="timeline-date"><i class="fas fa-calendar"></i> 2020 - 2023</p>
+              <p>Completed secondary education with a strong foundation in science subjects.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3><i class="fas fa-laptop-code"></i> Software Developer</h3>
+              <p class="timeline-school">Professional Experience</p>
+              <p class="timeline-date"><i class="fas fa-calendar"></i> 2024 - Present</p>
+              <p>Building web applications and software solutions for clients and collaborative teams.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3><i class="fas fa-laptop-code"></i> Software Developer Intern</h3>
+              <p class="timeline-school">Tech Company</p>
+              <p class="timeline-date"><i class="fas fa-calendar"></i> 2023 - 2024</p>
+              <p>Worked on web development projects, learned modern frameworks, and contributed to real-world applications.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3><i class="fas fa-user-tie"></i> Freelance Developer</h3>
+              <p class="timeline-school">Self-employed</p>
+              <p class="timeline-date"><i class="fas fa-calendar"></i> 2022 - Present</p>
+              <p>Building websites and applications for clients, focusing on modern technologies and clean code.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">What I Can Do For You</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <h3>Web Development</h3>
+            <p>Building modern, responsive websites and web applications.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-server"></i></div>
+            <h3>Backend Development</h3>
+            <p>Creating robust APIs and server-side solutions.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-brain"></i></div>
+            <h3>AI Solutions</h3>
+            <p>Implementing machine learning models and intelligent systems.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-cloud"></i></div>
+            <h3>Cloud Services</h3>
+            <p>Designing and deploying cloud infrastructure.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-database"></i></div>
+            <h3>Data Engineering</h3>
+            <p>Building data pipelines and analytics systems.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-tools"></i></div>
+            <h3>Technical Consulting</h3>
+            <p>Providing expert advice on software architecture.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/images/learnlight.png" alt="Leanlight project preview" loading="lazy" decoding="async" width="900" height="600">
+          </div>
+          <div class="project-info">
+            <h3><i class="fas fa-graduation-cap"></i> Leanlight</h3>
+            <p>A platform for students to access curated learning content and track their progress.</p>
+            <div class="tech-stack">
+              <span>Node.js</span><span>Vite</span><span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+            <a href="https://github.com/Elly739/learnlight" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" alt="Teachable Machine project preview" loading="lazy" decoding="async" width="900" height="600">
+          </div>
+          <div class="project-info">
+            <h3><i class="fas fa-robot"></i> Teachable Machine</h3>
+            <p>An interactive image classification model built with Google's Teachable Machine.</p>
+            <div class="tech-stack">
+              <span>TensorFlow</span><span>ML</span><span>HTML</span><span>JavaScript</span>
+            </div>
+            <a href="https://github.com/Elly739/Teachable-Machine-Image-Model" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=400&fit=crop" alt="Be My Valentine project preview" loading="lazy" decoding="async" width="900" height="600">
+          </div>
+          <div class="project-info">
+            <h3><i class="fas fa-heart"></i> Be My Valentine</h3>
+            <p>A fun and interactive Valentine's Day themed web application.</p>
+            <div class="tech-stack">
+              <span>HTML</span><span>CSS</span><span>Python</span>
+            </div>
+            <a href="https://github.com/Elly739/BeMyValentine" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv" class="cv">
+      <div class="container">
+        <h2 class="section-title">My Resume</h2>
+        <p class="section-subtitle">Download my CV to learn more</p>
+        <div class="cv-card">
+          <div class="cv-icon"><i class="fas fa-file-pdf"></i></div>
+          <h3>Okello Elly - Resume</h3>
+          <p>Software Engineer & Innovator</p>
+          <a href="assets/pdf/RESUME.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-card">
+          <h3>Let's Connect!</h3>
+          <p>Feel free to reach out for collaborations or just to say hello.</p>
+          <div class="contact-info">
+            <a href="mailto:okelloelly@zetech.ac.ke" class="contact-item"><i class="fas fa-envelope"></i><span>okelloelly@zetech.ac.ke</span></a>
+            <a href="tel:+254769182575" class="contact-item"><i class="fas fa-phone"></i><span>+254 769182575</span></a>
+            <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fab fa-linkedin"></i><span>elly-okello</span></a>
+            <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fab fa-github"></i><span>@Elly739</span></a>
+          </div>
+          <div class="social-links-center">
+            <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/chairman.official/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/OkelloElly018" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-content">
       <div class="footer-logo">Elly</div>
       <p>&copy; <span id="year"></span> Elly | Software Engineer</p>
       <div class="footer-social">
-        <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/chairman.official/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/OkelloElly018" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/chairman.official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/OkelloElly018" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
+    </div>
     <a href="#home" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
   </footer>
 
-  <!-- Typewriter Script - Embedded directly -->
   <script>
-    // Typewriter effect
     document.addEventListener('DOMContentLoaded', function() {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
       const typedTextElement = document.querySelector('.typed-text');
       if (typedTextElement) {
         const phrases = ['Software Engineer', 'Innovator', 'Full-Stack Developer', 'Problem Solver'];
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        
-        function type() {
-          const currentPhrase = phrases[phraseIndex];
-          if (isDeleting) {
-            typedTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
-            charIndex--;
-          } else {
-            typedTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
-            charIndex++;
+
+        if (prefersReducedMotion) {
+          typedTextElement.textContent = phrases[0];
+        } else {
+          function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+              typedTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
+              charIndex--;
+            } else {
+              typedTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
+              charIndex++;
+            }
+
+            let speed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+              speed = 2000;
+              isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+              isDeleting = false;
+              phraseIndex = (phraseIndex + 1) % phrases.length;
+              speed = 500;
+            }
+
+            setTimeout(type, speed);
           }
-          
-          let speed = isDeleting ? 50 : 100;
-          
-          if (!isDeleting && charIndex === currentPhrase.length) {
-            speed = 2000;
-            isDeleting = true;
-          } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            speed = 500;
-          }
-          
-          setTimeout(type, speed);
+
+          type();
         }
-        
-        type();
       }
-      
-      // Update year
+
       const yearElement = document.getElementById('year');
       if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
       }
-      
-      // Theme toggle
+
       const themeToggle = document.getElementById('themeToggle');
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        if (themeToggle) {
+          themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+      }
+
       if (themeToggle) {
         themeToggle.addEventListener('click', function() {
           document.body.classList.toggle('light-mode');
           const isLight = document.body.classList.contains('light-mode');
           themeToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+          localStorage.setItem('theme', isLight ? 'light' : 'dark');
         });
       }
-      
-      // Smooth scroll
+
+      const navToggle = document.getElementById('navToggle');
+      const header = document.querySelector('.site-header');
+      const navLinks = document.querySelectorAll('.nav-link');
+      if (navToggle && header) {
+        navToggle.addEventListener('click', function() {
+          const isOpen = header.classList.toggle('nav-open');
+          navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            header.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
       document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
           const href = this.getAttribute('href');
@@ -305,13 +417,27 @@
             if (target) {
               const headerHeight = document.querySelector('header').offsetHeight;
               const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-              window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+              window.scrollTo({ top: targetPosition, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
             }
           }
         });
       });
+
+      const backToTop = document.querySelector('.back-to-top');
+      if (backToTop) {
+        const toggleBackToTop = function() {
+          if (window.scrollY > 400) {
+            backToTop.classList.add('is-visible');
+          } else {
+            backToTop.classList.remove('is-visible');
+          }
+        };
+
+        toggleBackToTop();
+        window.addEventListener('scroll', toggleBackToTop);
+      }
     });
-    
+
     console.log('Portfolio Loaded!');
   </script>
 </body>

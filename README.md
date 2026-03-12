@@ -8,10 +8,23 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 - ⌨️ Animated typewriter effect
 - 📱 Fully responsive design
 - 🌐 SEO optimized
+- 🎓 Education section with timeline
+- 💼 Experience section with timeline
 - 🎯 3 featured projects
 - 💼 Services section
 - 📄 CV/Resume download
 - 📬 Contact form with social links
+
+## Sections
+
+- **Home** - Hero with profile image and typewriter effect
+- **About** - Personal introduction and skills
+- **Education** - Academic background (Zetech University)
+- **Experience** - Work history and internships
+- **Services** - What I can do for you
+- **Projects** - Featured projects (Leanlight, Teachable Machine, Be My Valentine)
+- **CV** - Download resume
+- **Contact** - Get in touch
 
 ## Technologies Used
 
@@ -54,11 +67,12 @@ npx serve
 ## Connect With Me
 
 - 📧 Email: okelloelly@zetech.ac.ke
+- 📱 Phone: +254 769182575
 - 💼 LinkedIn: [elly-okello](https://www.linkedin.com/in/okello-elly-102788312/)
 - 🐙 GitHub: [@Elly739](https://github.com/Elly739)
 - 🐦 Twitter: [@OkelloElly018](https://x.com/OkelloElly018)
+- 📸 Instagram: [@chairman.official](https://www.instagram.com/chairman.official/)
 
 ## License
 
 MIT License - Feel free to use this template for your own portfolio!
-
