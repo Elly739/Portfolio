@@ -39,7 +39,7 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 - **Work Process** - Delivery stages
 - **Skills Depth** - Visual skill proficiency
 - **Testimonials** - Feedback highlights
-- **CV** - Download resume
+- **Resume** - Download resume
 - **CTA** - Project call-to-action
 - **Contact** - Get in touch
 
