@@ -246,7 +246,61 @@
         <button class="filter-btn" data-filter="ml">Machine Learning</button>
         <button class="filter-btn" data-filter="app">Apps</button>
       </div>
-      
+
+      <div class="project-card reveal-up" data-category="app">
+        <div class="project-image">
+          <img src="assets/images/Smarwaste.jpg" alt="Smartwaste Platform">
+          <div class="project-overlay">
+            <a href="https://github.com/Elly739/Smartwaste.ke" target="_blank" rel="noopener noreferrer" class="overlay-icon">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3><i class="fas fa-recycle"></i> Smartwaste</h3>
+          <p>A smart waste platform for bin logging, rewards, impact tracking, and admin visibility.</p>
+          <div class="tech-stack">
+            <span><i class="fab fa-react"></i> React</span>
+            <span><i class="fas fa-bolt"></i> Vite</span>
+            <span><i class="fas fa-server"></i> Express</span>
+            <span><i class="fas fa-database"></i> SQLite</span>
+            <span><i class="fas fa-wind"></i> Tailwind</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/Elly739/Smartwaste.ke" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal-up" data-category="web">
+        <div class="project-image">
+          <img src="assets/images/Profile.png" alt="Chairman Official Platform">
+          <div class="project-overlay">
+            <a href="https://github.com/Elly739/Chairman.Official-Platform" target="_blank" rel="noopener noreferrer" class="overlay-icon">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3><i class="fas fa-user-tie"></i> Chairman.Official Platform</h3>
+          <p>An in-progress personal platform for leadership updates, public storytelling, projects, and official communication.</p>
+          <div class="tech-stack">
+            <span><i class="fas fa-forward"></i> Next.js</span>
+            <span><i class="fab fa-react"></i> React</span>
+            <span><i class="fas fa-code"></i> TypeScript</span>
+            <span><i class="fas fa-wind"></i> Tailwind</span>
+            <span><i class="fas fa-arrows-alt"></i> Framer Motion</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/Elly739/Chairman.Official-Platform" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="project-card reveal-up" data-category="web">
         <div class="project-image">
           <img src="assets/images/learnlight.png" alt="Leanlight Platform">
@@ -255,11 +309,10 @@
               <i class="fab fa-github"></i>
             </a>
           </div>
-        
+        </div>
         <div class="project-info">
           <h3><i class="fas fa-graduation-cap"></i> Leanlight</h3>
           <p>A platform for students to access curated learning content and track their progress.</p>
-          
           <div class="tech-stack">
             <span><i class="fab fa-node"></i> Node.js</span>
             <span><i class="fas fa-bolt"></i> Vite</span>
@@ -267,7 +320,6 @@
             <span><i class="fab fa-css3-alt"></i> CSS</span>
             <span><i class="fab fa-js"></i> JS</span>
           </div>
-          
           <div class="project-buttons">
             <a href="https://github.com/Elly739/learnlight" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
               <i class="fab fa-github"></i> View Code
@@ -276,9 +328,9 @@
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
           </div>
+        </div>
       </div>
 
-      <!-- Teachable Machine Project -->
       <div class="project-card reveal-up" data-category="ml">
         <div class="project-image">
           <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" alt="Teachable Machine">
@@ -287,26 +339,24 @@
               <i class="fab fa-github"></i>
             </a>
           </div>
-        
+        </div>
         <div class="project-info">
           <h3><i class="fas fa-robot"></i> Teachable Machine Image Model</h3>
           <p>An interactive image classification model built with Google's Teachable Machine.</p>
-          
           <div class="tech-stack">
             <span><i class="fas fa-brain"></i> TensorFlow</span>
             <span><i class="fas fa-robot"></i> ML</span>
             <span><i class="fab fa-html5"></i> HTML</span>
             <span><i class="fab fa-js"></i> JavaScript</span>
           </div>
-          
           <div class="project-buttons">
             <a href="https://github.com/Elly739/Teachable-Machine-Image-Model" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
               <i class="fab fa-github"></i> View Code
             </a>
           </div>
+        </div>
       </div>
 
-      <!-- Valentine App Project -->
       <div class="project-card reveal-up" data-category="app">
         <div class="project-image">
           <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=400&fit=crop" alt="Be My Valentine">
@@ -315,22 +365,21 @@
               <i class="fab fa-github"></i>
             </a>
           </div>
-        
+        </div>
         <div class="project-info">
           <h3><i class="fas fa-heart"></i> Be My Valentine</h3>
           <p>A fun and interactive Valentine's Day app with beautiful animations.</p>
-          
           <div class="tech-stack">
             <span><i class="fab fa-html5"></i> HTML</span>
             <span><i class="fab fa-css3-alt"></i> CSS</span>
             <span><i class="fab fa-js"></i> JavaScript</span>
           </div>
-          
           <div class="project-buttons">
             <a href="https://github.com/Elly739/BeMyValentine" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
               <i class="fab fa-github"></i> View Code
             </a>
           </div>
+        </div>
       </div>
 
       <div class="more-projects reveal-up">
