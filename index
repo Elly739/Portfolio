@@ -276,7 +276,7 @@
 
       <div class="project-card reveal-up" data-category="web">
         <div class="project-image">
-          <img src="assets/images/Profile.png" alt="Chairman Official Platform">
+          <img src="assets/images/Chairman.official.jpg" alt="Chairman Official Platform">
           <div class="project-overlay">
             <a href="https://github.com/Elly739/Chairman.Official-Platform" target="_blank" rel="noopener noreferrer" class="overlay-icon">
               <i class="fab fa-github"></i>
