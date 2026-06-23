@@ -242,16 +242,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', function(event) {
       event.preventDefault();
+      const status = document.getElementById('formStatus');
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const subject = document.getElementById('subject').value.trim();
       const message = document.getElementById('message').value.trim();
-      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-      const mailto = 'mailto:okelloelly@zetech.ac.ke?subject=' + encodeURIComponent(subject) + '&body=' + body;
-      const status = document.getElementById('formStatus');
-      if (status) status.textContent = 'Opening your email client...';
-      window.location.href = mailto;
-      if (status) setTimeout(() => { status.textContent = ''; }, 2500);
+      const body = encodeURIComponent(
+        'From: ' + name + ' <' + email + '>\n\n' +
+        message
+      );
+      const mailto = 'mailto:iamellyokello@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+      if (status) status.textContent = 'Opening your email client…';
+      const link = document.createElement('a');
+      link.href = mailto;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      contactForm.reset();
     });
   }
 
