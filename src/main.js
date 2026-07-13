@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const typedTextElement = document.querySelector('.typed-text');
   if (typedTextElement) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const phrases = ['Software Engineer', 'Innovator', 'Full-Stack Developer', 'Problem Solver'];
+    const phrases = ['Software Engineer', 'Systems Architect', 'Innovation Strategist', 'Human-AI Collaboration Advocate'];
 
     if (prefersReducedMotion) {
       typedTextElement.textContent = phrases[0];
