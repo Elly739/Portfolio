@@ -747,6 +747,14 @@ nav { display: flex; align-items: center; gap: 18px; }
   border-radius: inherit;
 }
 
+/* Tech Stack & Tools */
+.tech-stack-section { background: var(--bg-primary); padding: 60px 0; }
+.tech-stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+.tech-group { background: var(--gradient-card); border: 1px solid var(--glass-border); border-radius: 12px; padding: 20px; }
+.tech-group h4 { font-size: 0.9rem; color: var(--primary-light); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+.tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tech-tags span { background: rgba(20, 184, 166, 0.12); color: var(--text-secondary); padding: 5px 12px; border-radius: 999px; font-size: 0.85rem; border: 1px solid rgba(148, 163, 184, 0.15); }
+
 /* Contact */
 .contact { background: var(--bg-secondary); }
 

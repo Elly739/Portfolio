@@ -10,6 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typedTextElement) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const phrases = ['Software Engineer', 'Systems Architect', 'Innovation Strategist', 'Human-AI Collaboration Advocate'];
+    const cursor = document.querySelector('.cursor');
+    const separators = ['|', '✦', '•', '→', '◆', '║'];
+    let sepIndex = 0;
+    if (cursor && !prefersReducedMotion) {
+      setInterval(() => {
+        sepIndex = (sepIndex + 1) % separators.length;
+        cursor.textContent = separators[sepIndex];
+      }, 400);
+    }
 
     if (prefersReducedMotion) {
       typedTextElement.textContent = phrases[0];
