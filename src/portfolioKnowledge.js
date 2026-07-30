@@ -3,7 +3,7 @@ export const portfolioKnowledge = {
     name: 'Okello Elly',
     headline: 'Software Engineer, Systems Architect, and Innovation Strategist',
     summary:
-      'Okello Elly builds intelligent systems, scalable applications, and practical digital products. His work spans AI-powered systems, cloud architecture, data engineering, web apps, and human-centered innovation.',
+      'Okello Elly builds intelligent systems, scalable applications, and practical digital products. His work spans AI-powered systems, cloud architecture, data engineering, web apps, mobile development, blockchain exploration, and human-centered innovation.',
     availability: 'Open to freelance work, collaborations, contracts, and select projects. Typical response time is 24-48 hours.',
     contact: {
       email: 'okelloelly@zetech.ac.ke',
@@ -54,11 +54,16 @@ export const portfolioKnowledge = {
     'Python',
     'HTML',
     'CSS',
+    'Kotlin',
+    'XML',
+    'C#',
+    'C++',
     'Vite',
     'TensorFlow',
     'AI/ML',
     'Cloud architecture',
     'Data engineering',
+    'Blockchain',
     'Backend APIs',
     'Figma',
     'GitHub',
@@ -70,6 +75,8 @@ export const portfolioKnowledge = {
     'AI solutions',
     'Cloud services',
     'Data engineering',
+    'Mobile development',
+    'Desktop applications',
     'Technical consulting'
   ],
   projects: [
@@ -132,9 +139,9 @@ export const portfolioKnowledge = {
       name: 'Nairobi Hidden Gems',
       category: 'Social discovery',
       role: 'Builder',
-      summary: 'A Gen Z social discovery app for aesthetic places in Nairobi.',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      highlights: ['Focuses on lightweight web experience and local discovery.']
+      summary: 'A Gen Z social discovery app for aesthetic places in Nairobi, now expanding to Android with Kotlin and XML.',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Kotlin', 'XML', 'Android'],
+      highlights: ['Focuses on lightweight web experience and local discovery, with an Android app in development.']
     },
     {
       name: 'Africa Rise Ecosystem',
@@ -161,5 +168,5 @@ export const portfolioKnowledge = {
     'Explores how technology can shape industries, organizations, and the future of Africa.'
   ],
   resumeSummary:
-    'Okello Elly is a Software Engineering student at Zetech University and a software developer focused on frontend engineering, full-stack web apps, AI/ML demos, cloud/data systems, and innovation strategy. He has shipped multiple projects across AI, edtech, sustainability, social discovery, simulations, and campus platforms.'
+    'Okello Elly is a Software Engineering student at Zetech University and a software developer focused on frontend engineering, full-stack web apps, mobile development, blockchain exploration, AI/ML demos, cloud/data systems, and innovation strategy. He has shipped multiple projects across AI, edtech, sustainability, social discovery, simulations, and campus platforms.'
 };
