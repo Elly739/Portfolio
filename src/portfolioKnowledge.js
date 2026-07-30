@@ -1,9 +1,9 @@
 export const portfolioKnowledge = {
   identity: {
     name: 'Okello Elly',
-    headline: 'Software Engineer, Systems Architect, and Innovation Strategist',
+    headline: 'Software Engineer | Systems Architect | Innovation Strategist | Human-AI Collaboration Advocate',
     summary:
-      'Okello Elly builds intelligent systems, scalable applications, and practical digital products. His work spans AI-powered systems, cloud architecture, data engineering, web apps, mobile development, blockchain exploration, and human-centered innovation.',
+      'Okello Elly is a Software Engineer | Systems Architect | Innovation Strategist | Human-AI Collaboration Advocate. He builds intelligent systems, scalable applications, and practical digital products. His work spans AI-powered systems, cloud architecture, data engineering, web apps, mobile development, blockchain exploration, and human-centered innovation.',
     availability: 'Open to freelance work, collaborations, contracts, and select projects. Typical response time is 24-48 hours.',
     contact: {
       email: 'okelloelly@zetech.ac.ke',
@@ -58,6 +58,9 @@ export const portfolioKnowledge = {
     'XML',
     'C#',
     'C++',
+    'MySQL',
+    'PLpgSQL',
+    'NumPy',
     'Vite',
     'TensorFlow',
     'AI/ML',
