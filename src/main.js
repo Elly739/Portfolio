@@ -1,3 +1,5 @@
+import { portfolioKnowledge } from './portfolioKnowledge.js';
+
 // Portfolio JavaScript
 document.addEventListener('DOMContentLoaded', () => {
   const revealFallbackTimer = setTimeout(() => {
@@ -262,6 +264,186 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const aiChat = document.getElementById('aiChat');
+  const aiChatToggle = document.getElementById('aiChatToggle');
+  const aiChatClose = document.getElementById('aiChatClose');
+  const aiChatPanel = document.getElementById('aiChatPanel');
+  const aiChatMessages = document.getElementById('aiChatMessages');
+  const aiChatForm = document.getElementById('aiChatForm');
+  const aiChatInput = document.getElementById('aiChatInput');
+  const aiStopButton = document.getElementById('aiStopButton');
+  const conversation = [];
+  let activeController = null;
+  let streamTimer = null;
+
+  const openAiChat = () => {
+    if (!aiChat || !aiChatPanel || !aiChatToggle) return;
+    aiChat.classList.add('is-open');
+    aiChatPanel.setAttribute('aria-hidden', 'false');
+    aiChatToggle.setAttribute('aria-expanded', 'true');
+    if (!aiChatMessages.dataset.started) {
+      addAiMessage('assistant', "Hi, I can answer questions about Elly's resume, projects, skills, experience, and availability.");
+      aiChatMessages.dataset.started = 'true';
+    }
+    window.setTimeout(() => aiChatInput?.focus(), 50);
+  };
+
+  const closeAiChat = () => {
+    if (!aiChat || !aiChatPanel || !aiChatToggle) return;
+    aiChat.classList.remove('is-open');
+    aiChatPanel.setAttribute('aria-hidden', 'true');
+    aiChatToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  const addAiMessage = (role, text = '') => {
+    const message = document.createElement('div');
+    message.className = `ai-message ${role}`;
+    message.textContent = text;
+    aiChatMessages.appendChild(message);
+    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+    return message;
+  };
+
+  const setAiBusy = isBusy => {
+    if (aiStopButton) aiStopButton.disabled = !isBusy;
+    if (aiChatInput) aiChatInput.disabled = isBusy;
+  };
+
+  const stopAiStream = () => {
+    activeController?.abort();
+    activeController = null;
+    if (streamTimer) window.clearInterval(streamTimer);
+    streamTimer = null;
+    document.querySelectorAll('.ai-message.is-streaming').forEach(item => item.classList.remove('is-streaming'));
+    setAiBusy(false);
+  };
+
+  const buildLocalAnswer = question => {
+    const lower = question.toLowerCase();
+    const skillsList = portfolioKnowledge.skills.join(', ');
+    const projectList = portfolioKnowledge.projects.map(project => `${project.name}: ${project.summary}`).join('\n');
+
+    if (lower.includes('resume') || lower.includes('cv') || lower.includes('summar')) {
+      return portfolioKnowledge.resumeSummary;
+    }
+    if (lower.includes('ai') || lower.includes('machine learning') || lower.includes('ml')) {
+      const aiProjects = portfolioKnowledge.projects.filter(project => /ai|machine|tensorflow|energy|sustainability/i.test(`${project.category} ${project.summary} ${project.technologies.join(' ')}`));
+      return `Projects involving AI include ${aiProjects.map(project => project.name).join(', ')}. ${aiProjects.map(project => `${project.name} focuses on ${project.summary}`).join(' ')}`;
+    }
+    if (lower.includes('react')) {
+      const reactProjects = portfolioKnowledge.projects.filter(project => project.technologies.some(tech => tech.toLowerCase() === 'react'));
+      return reactProjects.length ? `Yes. Elly has React experience, especially through ${reactProjects.map(project => project.name).join(', ')}.` : "React appears in Elly's skill set, and his portfolio emphasizes modern front-end engineering.";
+    }
+    if (lower.includes('android') || lower.includes('mobile')) {
+      return 'This portfolio mainly highlights web, AI, cloud, data, and interactive projects. It does not currently list a dedicated Android app project.';
+    }
+    if (lower.includes('skill') || lower.includes('technolog') || lower.includes('stack')) {
+      return `Elly works with ${skillsList}. His strongest visible areas are frontend engineering, backend APIs, AI/ML systems, cloud architecture, and data engineering.`;
+    }
+    if (lower.includes('leadership') || lower.includes('leader')) {
+      return portfolioKnowledge.leadership.join(' ');
+    }
+    if (lower.includes('project')) {
+      return `Elly's featured projects include:\n${projectList}`;
+    }
+    if (lower.includes('contact') || lower.includes('hire') || lower.includes('available')) {
+      return `Elly is ${portfolioKnowledge.identity.availability} You can contact him at ${portfolioKnowledge.identity.contact.email}, GitHub ${portfolioKnowledge.identity.contact.github}, or LinkedIn ${portfolioKnowledge.identity.contact.linkedin}.`;
+    }
+    return `${portfolioKnowledge.identity.name} is a ${portfolioKnowledge.identity.headline}. ${portfolioKnowledge.identity.summary} Ask me about his AI projects, React experience, skills, resume, leadership, or availability.`;
+  };
+
+  const streamTextInto = (target, text, signal) => new Promise(resolve => {
+    let index = 0;
+    target.textContent = '';
+    target.classList.add('is-streaming');
+    streamTimer = window.setInterval(() => {
+      if (signal?.aborted) {
+        window.clearInterval(streamTimer);
+        streamTimer = null;
+        target.classList.remove('is-streaming');
+        resolve(target.textContent);
+        return;
+      }
+      target.textContent += text.slice(index, index + 3);
+      index += 3;
+      aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+      if (index >= text.length) {
+        window.clearInterval(streamTimer);
+        streamTimer = null;
+        target.classList.remove('is-streaming');
+        resolve(text);
+      }
+    }, 18);
+  });
+
+  const askPortfolioAi = async question => {
+    const userQuestion = question.trim();
+    if (!userQuestion || !aiChatMessages) return;
+    openAiChat();
+    addAiMessage('user', userQuestion);
+    const assistantMessage = addAiMessage('assistant', '');
+    assistantMessage.classList.add('is-streaming');
+    setAiBusy(true);
+    activeController = new AbortController();
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: userQuestion, history: conversation, knowledge: portfolioKnowledge }),
+        signal: activeController.signal
+      });
+
+      if (!response.ok || !response.body) throw new Error('AI API unavailable');
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      assistantMessage.textContent = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        assistantMessage.textContent += decoder.decode(value, { stream: true });
+        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+      }
+    } catch (error) {
+      if (error.name !== 'AbortError') {
+        await streamTextInto(assistantMessage, buildLocalAnswer(userQuestion), activeController.signal);
+      }
+    } finally {
+      const finalAnswer = assistantMessage.textContent.trim();
+      assistantMessage.classList.remove('is-streaming');
+      if (finalAnswer) {
+        conversation.push({ role: 'user', content: userQuestion }, { role: 'assistant', content: finalAnswer });
+        if (conversation.length > 12) conversation.splice(0, conversation.length - 12);
+      }
+      activeController = null;
+      setAiBusy(false);
+    }
+  };
+
+  aiChatToggle?.addEventListener('click', () => {
+    if (aiChat?.classList.contains('is-open')) closeAiChat(); else openAiChat();
+  });
+
+  aiChatClose?.addEventListener('click', closeAiChat);
+  aiStopButton?.addEventListener('click', stopAiStream);
+
+  document.querySelectorAll('[data-ai-prompt]').forEach(button => {
+    button.addEventListener('click', () => askPortfolioAi(button.getAttribute('data-ai-prompt')));
+  });
+
+  aiChatForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    const question = aiChatInput.value;
+    aiChatInput.value = '';
+    askPortfolioAi(question);
+  });
+
+  aiChatInput?.addEventListener('keydown', event => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      aiChatForm?.requestSubmit();
+    }
+  });
   clearTimeout(revealFallbackTimer);
   document.querySelectorAll('[data-reveal]').forEach(item => item.classList.add('is-visible'));
 });
