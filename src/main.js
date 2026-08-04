@@ -344,7 +344,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return reactProjects.length ? `Yes. Elly has React experience, especially through ${reactProjects.map(project => project.name).join(', ')}.` : "React appears in Elly's skill set, and his portfolio emphasizes modern front-end engineering.";
     }
     if (lower.includes('android') || lower.includes('mobile')) {
-      return 'This portfolio mainly highlights web, AI, cloud, data, and interactive projects. It does not currently list a dedicated Android app project.';
+      const mobileProjects = portfolioKnowledge.projects.filter(project => project.technologies.some(tech => /android|kotlin|xml/i.test(tech)));
+      if (mobileProjects.length) {
+        return `Yes, Elly has mobile development experience. ${mobileProjects.map(project => `${project.name}`).join(', ')} involve Android development with Kotlin and XML.`;
+      }
+      return "The portfolio includes mobile development services for Android apps built with Kotlin and XML.";
     }
     if (lower.includes('skill') || lower.includes('technolog') || lower.includes('stack')) {
       return `Elly works with ${skillsList}. His strongest visible areas are frontend engineering, backend APIs, AI/ML systems, cloud architecture, and data engineering.`;
