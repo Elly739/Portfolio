@@ -142,9 +142,10 @@ export const portfolioKnowledge = {
       name: 'Nairobi Hidden Gems',
       category: 'Social discovery',
       role: 'Builder',
-      summary: 'A Gen Z social discovery app for aesthetic places in Nairobi, now expanding to Android with Kotlin and XML.',
+      summary: 'A Gen Z social discovery app for aesthetic places in Nairobi, available as both a web app and an Android app.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Kotlin', 'XML', 'Android'],
-      highlights: ['Focuses on lightweight web experience and local discovery, with an Android app in development.']
+      highlights: ['Lightweight web experience, local discovery, and Android app built with Kotlin and XML.'],
+      links: { web: 'https://github.com/Elly739/Nairobi-Hidden-Gems', app: 'https://github.com/Elly739/nairobi-hidden-gems-' }
     },
     {
       name: 'Africa Rise Ecosystem',
@@ -160,9 +161,10 @@ export const portfolioKnowledge = {
       category: 'Campus events',
       role: 'Builder',
       summary:
-        'A modern web platform for university students to discover, submit, and RSVP to campus events, hackathons, sports, and more.',
-      technologies: ['TypeScript', 'PLpgSQL', 'CSS', 'JavaScript'],
-      highlights: ['Shows event workflows, community UX, and full product structure.']
+        'A modern platform for university students to discover, submit, and RSVP to campus events, hackathons, and sports — available as a web app and an Android app.',
+      technologies: ['TypeScript', 'PLpgSQL', 'CSS', 'JavaScript', 'Kotlin', 'XML', 'Android'],
+      highlights: ['Event workflows, community UX, full product structure, and Android mobile app built with Kotlin and XML.'],
+      links: { web: 'https://github.com/Elly739/campus-pulse', app: 'https://github.com/Elly739/CampusHub-Student-Portal' }
     }
   ],
   leadership: [

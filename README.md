@@ -75,12 +75,12 @@ Blockchain exploration
 1. **VumaGrid** - AI-Powered Distributed Energy Management System (DERMS) for optimizing electricity usage in commercial buildings
 2. **SmartWaste** - Smart waste tracking platform with bin logging, rewards, and admin oversight
 3. **Chairman.Official Platform** - Personal platform for leadership communication and public storytelling
-4. **Nairobi Hidden Gems** - Gen Z social discovery app for aesthetic places in Nairobi, with an Android app in development (Kotlin + XML)
+4. **Nairobi Hidden Gems** - Gen Z social discovery app for aesthetic places in Nairobi (web app + Android app in Kotlin/XML)
 5. **Leanlight** - Curated learning with progress tracking for students
 6. **Teachable Machine** - Interactive image classification demo
 7. **My Sim League** - Football simulation game with managerial career across Europe's top leagues
 8. **Africa Rise Ecosystem** - Digital growth ecosystem connecting learning, skills, and opportunities for African students
-9. **Campus Pulse** - Modern web platform for university campus events, hackathons, and activities
+9. **Campus Pulse** - Modern platform for university students to discover, submit, and RSVP to campus events (web app + Android app in Kotlin/XML)
 
 ## AI Assistant
 

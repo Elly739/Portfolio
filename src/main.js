@@ -353,8 +353,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lower.includes('skill') || lower.includes('technolog') || lower.includes('stack')) {
       return `Elly works with ${skillsList}. His strongest visible areas are frontend engineering, backend APIs, AI/ML systems, cloud architecture, and data engineering.`;
     }
-    if (lower.includes('leadership') || lower.includes('leader')) {
+   if (lower.includes('leadership') || lower.includes('leader')) {
       return portfolioKnowledge.leadership.join(' ');
+    }
+    if (lower.includes('blockchain')) {
+      return 'Elly has been exploring blockchain technology as part of his innovation work, applying it alongside his AI and distributed systems research.';
+    }
+    if (lower.includes('desktop') || lower.includes('c#') || lower.includes('c++') || lower.includes('visual programming')) {
+      const desktopSkills = portfolioKnowledge.skills.filter(s => /C#|C\+\+|Visual Programming/.test(s));
+      return `Yes, Elly builds desktop applications using C# and visual programming tools. He also works with C++ for performance-critical components.`;
     }
     if (lower.includes('project')) {
       return `Elly's featured projects include:\n${projectList}`;
@@ -362,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lower.includes('contact') || lower.includes('hire') || lower.includes('available')) {
       return `Elly is ${portfolioKnowledge.identity.availability} You can contact him at ${portfolioKnowledge.identity.contact.email}, GitHub ${portfolioKnowledge.identity.contact.github}, or LinkedIn ${portfolioKnowledge.identity.contact.linkedin}.`;
     }
-    return `${portfolioKnowledge.identity.name} is a ${portfolioKnowledge.identity.headline}. ${portfolioKnowledge.identity.summary} Ask me about his AI projects, React experience, skills, resume, leadership, or availability.`;
+    return `${portfolioKnowledge.identity.name} is a ${portfolioKnowledge.identity.headline}. ${portfolioKnowledge.identity.summary} Ask me about his AI projects, React experience, mobile development, desktop applications, blockchain exploration, skills, resume, leadership, projects, or availability.`;
   };
 
   const streamTextInto = (target, text, signal) => new Promise(resolve => {
