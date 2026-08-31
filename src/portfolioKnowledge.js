@@ -3,7 +3,7 @@ export const portfolioKnowledge = {
     name: 'Okello Elly',
     headline: 'Software Engineer | Systems Architect | Innovation Strategist | Human-AI Collaboration Advocate',
     summary:
-      'Okello Elly is a Software Engineer | Systems Architect | Innovation Strategist | Human-AI Collaboration Advocate. He builds intelligent systems, scalable applications, and practical digital products. His work spans AI-powered systems, cloud architecture, data engineering, web apps, mobile development, blockchain exploration, and human-centered innovation.',
+      'Okello Elly is a Software Engineer | Systems Architect | Innovation Strategist | Human-AI Collaboration Advocate. He builds intelligent systems, scalable applications, and practical digital products. His work spans AI-powered systems, cloud architecture, data engineering, web apps, mobile development with React Native, blockchain exploration, and human-centered innovation.',
     availability: 'Open to freelance work, collaborations, contracts, and select projects. Typical response time is 24-48 hours.',
     contact: {
       email: 'okelloelly@zetech.ac.ke',
@@ -105,6 +105,20 @@ export const portfolioKnowledge = {
       ]
     },
     {
+      name: 'AI-Powered E-Commerce Platform',
+      category: 'AI and web',
+      role: 'Builder',
+      summary:
+        'A full-stack e-commerce platform enhanced with AI recommendations, intelligent search, AI shopping assistant, and analytics. Built with React, Node.js, Express, Supabase, and Python FastAPI AI services.',
+      technologies: ['React', 'Node.js', 'Express', 'Supabase', 'Python', 'FastAPI', 'PostgreSQL', 'Stripe'],
+      highlights: [
+        'AI-powered product recommendations and semantic search.',
+        'AI shopping assistant chatbot using LLM and embeddings.',
+        'Complete e-commerce flow: auth, cart, wishlist, payments, order tracking, and admin analytics dashboard.'
+      ],
+      links: { github: 'https://github.com/Elly739/AI-Powered-E-Commerce-Platform' }
+    },
+    {
       name: 'VumaGrid',
       category: 'AI and energy',
       role: 'Founder and Systems Architect',
@@ -194,5 +208,5 @@ export const portfolioKnowledge = {
     'Explores how technology can shape industries, organizations, and the future of Africa.'
   ],
   resumeSummary:
-    'Okello Elly is a Software Engineering student at Zetech University and a software developer focused on frontend engineering, full-stack web apps, mobile development with React Native, AI/ML demos, cloud/data systems, and innovation strategy. He is currently contributing to AfroNative at Momentum Labs, an AI-powered African language learning platform. He has shipped multiple projects across AI, edtech, sustainability, social discovery, simulations, and campus platforms.'
+    'Okello Elly is a Software Engineering student at Zetech University and a software developer focused on full-stack web apps, AI/ML systems, mobile development with React Native, cloud/data systems, and innovation strategy. He is currently contributing to AfroNative at Momentum Labs and building an AI-powered e-commerce platform with Supabase, React, and Python FastAPI. He has shipped projects across AI, edtech, e-commerce, sustainability, social discovery, simulations, and campus platforms.'
 };
