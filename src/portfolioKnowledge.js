@@ -28,6 +28,12 @@ export const portfolioKnowledge = {
   ],
   experience: [
     {
+      role: 'AI & Mobile Development Intern',
+      organization: 'Momentum Labs',
+      period: 'August 2026 – Present',
+      summary: 'Contributing to AfroNative, an AI-powered African language learning platform built with React Native focused on practical, mobile-first language education. Developing mobile-first learning experiences incorporating native African languages, pronunciation feedback, conversational learning, and interactive lessons.'
+    },
+    {
       role: 'Front-End Engineering Intern',
       organization: 'Flyrank',
       period: 'July 2026',
@@ -55,6 +61,8 @@ export const portfolioKnowledge = {
     'HTML',
     'CSS',
     'Kotlin',
+    'React Native',
+    'Android',
     'XML',
     'C#',
     'C++',
@@ -83,6 +91,19 @@ export const portfolioKnowledge = {
     'Technical consulting'
   ],
   projects: [
+    {
+      name: 'AfroNative',
+      category: 'AI and mobile learning',
+      role: 'AI & Mobile Development Intern',
+      summary:
+        'An AI-powered African language learning platform built with React Native, focused on practical, mobile-first language education with native African languages, pronunciation feedback, conversational learning, and interactive lessons.',
+      technologies: ['React Native', 'AI', 'mobile development', 'language learning', 'pronunciation feedback'],
+      highlights: [
+        'Mobile-first learning experiences for native African languages.',
+        'Conversational learning and interactive lesson design.',
+        'AI-powered pronunciation feedback and practical language education.'
+      ]
+    },
     {
       name: 'VumaGrid',
       category: 'AI and energy',
@@ -173,5 +194,5 @@ export const portfolioKnowledge = {
     'Explores how technology can shape industries, organizations, and the future of Africa.'
   ],
   resumeSummary:
-    'Okello Elly is a Software Engineering student at Zetech University and a software developer focused on frontend engineering, full-stack web apps, mobile development, blockchain exploration, AI/ML demos, cloud/data systems, and innovation strategy. He has shipped multiple projects across AI, edtech, sustainability, social discovery, simulations, and campus platforms.'
+    'Okello Elly is a Software Engineering student at Zetech University and a software developer focused on frontend engineering, full-stack web apps, mobile development with React Native, AI/ML demos, cloud/data systems, and innovation strategy. He is currently contributing to AfroNative at Momentum Labs, an AI-powered African language learning platform. He has shipped multiple projects across AI, edtech, sustainability, social discovery, simulations, and campus platforms.'
 };

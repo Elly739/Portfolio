@@ -1208,6 +1208,37 @@ body.light-mode .modal-content { background: #ffffff; }
   animation: blink 1s infinite;
 }
 
+.ai-thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 11px 13px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+}
+
+.ai-thinking-dots {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.ai-thinking-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  animation: aiPulse 1.2s ease-in-out infinite;
+}
+
+.ai-thinking-dots span:nth-child(2) { animation-delay: 0.15s; }
+.ai-thinking-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes aiPulse {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
 .ai-prompts {
   display: flex;
   gap: 8px;
@@ -1300,6 +1331,11 @@ body.light-mode .ai-chat-form textarea,
 body.light-mode .ai-icon-button,
 body.light-mode .ai-stop-button {
   background: rgba(15, 23, 42, 0.05);
+}
+
+body.light-mode .ai-thinking {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.1);
 }
 
 @media (max-width: 560px) {

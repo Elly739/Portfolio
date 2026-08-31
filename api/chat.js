@@ -30,12 +30,30 @@ function buildLocalAnswer(question, knowledge) {
       : "React appears in Elly's broader front-end skill set, but no React-specific project was found in the current knowledge base.";
   }
 
+  if (lower.includes('react native') || lower.includes('afronative')) {
+    const rnProjects = projects.filter(project =>
+      /react native|afronative|mobile.*learning|language.*learning/i.test(
+        `${project.name || ''} ${project.summary || ''} ${(project.technologies || []).join(' ')}`
+      )
+    );
+    if (rnProjects.length) {
+      return `Yes. Elly is currently contributing to ${rnProjects.map(project => project.name).join(' and ')} at Momentum Labs — an AI-powered African language learning platform built with React Native, focused on mobile-first education, pronunciation feedback, conversational learning, and interactive lessons.`;
+    }
+    return 'React Native appears in Elly\'s mobile development skill set. He is currently applying it at Momentum Labs on the AfroNative language learning platform.';
+  }
+
   if (lower.includes('android') || lower.includes('mobile')) {
-    return 'This portfolio mainly highlights web, AI, cloud, data, and interactive projects. It does not currently list a dedicated Android app project.';
+    const mobileProjects = projects.filter(project =>
+      (project.technologies || []).some(tech => /android|kotlin|xml|react native/i.test(String(tech)))
+    );
+    if (mobileProjects.length) {
+      return `Yes, Elly has mobile development experience. ${mobileProjects.map(project => `${project.name}`).join(', ')} involve mobile development with React Native, Kotlin, and XML.`;
+    }
+    return 'The portfolio includes mobile development services for Android and React Native apps.';
   }
 
   if (lower.includes('skill') || lower.includes('technolog') || lower.includes('stack')) {
-    return `Elly works with ${skills.join(', ')}. His strongest visible areas are frontend engineering, backend APIs, AI/ML systems, cloud architecture, and data engineering.`;
+    return `Elly works with ${skills.join(', ')}. His strongest visible areas are frontend engineering, backend APIs, AI/ML systems, cloud architecture, data engineering, and mobile development with React Native.`;
   }
 
   if (lower.includes('leadership') || lower.includes('leader')) {
@@ -51,7 +69,7 @@ function buildLocalAnswer(question, knowledge) {
     return `Elly is ${identity.availability || 'open to collaborations and project work.'} You can contact him at ${contact.email || 'the email listed on the portfolio'}, GitHub ${contact.github || 'GitHub linked on the site'}, or LinkedIn ${contact.linkedin || 'LinkedIn linked on the site'}.`;
   }
 
-  return `${identity.name || 'Okello Elly'} is a ${identity.headline || 'Software Engineer'}. ${identity.summary || 'He builds intelligent systems, scalable applications, and practical digital products.'} Ask me about his AI projects, React experience, skills, resume, leadership, or availability.`;
+  return `${identity.name || 'Okello Elly'} is a ${identity.headline || 'Software Engineer'}. ${identity.summary || 'He builds intelligent systems, scalable applications, and practical digital products.'} Ask me about his AI projects, React experience, React Native mobile work, skills, resume, leadership, projects, or availability.`;
 }
 
 export default async function handler(request, response) {

@@ -327,6 +327,15 @@ document.addEventListener('DOMContentLoaded', () => {
     setAiBusy(false);
   };
 
+  const showAiThinking = () => {
+    const thinking = document.createElement('div');
+    thinking.className = 'ai-message assistant ai-thinking';
+    thinking.innerHTML = '<span class="ai-thinking-dots"><span></span><span></span><span></span></span>';
+    aiChatMessages.appendChild(thinking);
+    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+    return thinking;
+  };
+
   const buildLocalAnswer = question => {
     const lower = question.toLowerCase();
     const skillsList = portfolioKnowledge.skills.join(', ');
@@ -336,24 +345,34 @@ document.addEventListener('DOMContentLoaded', () => {
       return portfolioKnowledge.resumeSummary;
     }
     if (lower.includes('ai') || lower.includes('machine learning') || lower.includes('ml')) {
-      const aiProjects = portfolioKnowledge.projects.filter(project => /ai|machine|tensorflow|energy|sustainability/i.test(`${project.category} ${project.summary} ${project.technologies.join(' ')}`));
+      const aiProjects = portfolioKnowledge.projects.filter(project => /ai|machine|tensorflow|energy|sustainability|language|learning|pronunciation/i.test(`${project.category} ${project.summary} ${project.technologies.join(' ')}`));
+      if (!aiProjects.length) return 'The portfolio highlights AI/ML as a core focus area, but no matching AI project details were found in the knowledge base.';
       return `Projects involving AI include ${aiProjects.map(project => project.name).join(', ')}. ${aiProjects.map(project => `${project.name} focuses on ${project.summary}`).join(' ')}`;
+    }
+    if (lower.includes('react native') || lower.includes('afronative')) {
+      const rnProjects = portfolioKnowledge.projects.filter(project =>
+        /react native|afronative|mobile.*learning|language.*learning/i.test(`${project.name} ${project.summary} ${project.technologies.join(' ')}`)
+      );
+      if (rnProjects.length) {
+        return `Yes. Elly is currently contributing to ${rnProjects.map(project => project.name).join(' and ')} at Momentum Labs — an AI-powered African language learning platform built with React Native, focused on mobile-first education, pronunciation feedback, conversational learning, and interactive lessons.`;
+      }
+      return 'React Native appears in Elly\'s mobile development skill set. He is currently applying it at Momentum Labs on the AfroNative language learning platform.';
     }
     if (lower.includes('react')) {
       const reactProjects = portfolioKnowledge.projects.filter(project => project.technologies.some(tech => tech.toLowerCase() === 'react'));
-      return reactProjects.length ? `Yes. Elly has React experience, especially through ${reactProjects.map(project => project.name).join(', ')}.` : "React appears in Elly's skill set, and his portfolio emphasizes modern front-end engineering.";
+      return reactProjects.length ? `Yes. Elly has React experience, especially through ${reactProjects.map(project => project.name).join(', ')}.` : "React appears in Elly's broader front-end skill set, and his portfolio emphasizes modern front-end engineering.";
     }
     if (lower.includes('android') || lower.includes('mobile')) {
-      const mobileProjects = portfolioKnowledge.projects.filter(project => project.technologies.some(tech => /android|kotlin|xml/i.test(tech)));
+      const mobileProjects = portfolioKnowledge.projects.filter(project => project.technologies.some(tech => /android|kotlin|xml|react native/i.test(tech)));
       if (mobileProjects.length) {
-        return `Yes, Elly has mobile development experience. ${mobileProjects.map(project => `${project.name}`).join(', ')} involve Android development with Kotlin and XML.`;
+        return `Yes, Elly has mobile development experience. ${mobileProjects.map(project => `${project.name}`).join(', ')} involve mobile development with React Native, Kotlin, and XML.`;
       }
-      return "The portfolio includes mobile development services for Android apps built with Kotlin and XML.";
+      return "The portfolio includes mobile development services for Android and React Native apps.";
     }
     if (lower.includes('skill') || lower.includes('technolog') || lower.includes('stack')) {
-      return `Elly works with ${skillsList}. His strongest visible areas are frontend engineering, backend APIs, AI/ML systems, cloud architecture, and data engineering.`;
+      return `Elly works with ${skillsList}. His strongest visible areas are frontend engineering, backend APIs, AI/ML systems, cloud architecture, data engineering, and mobile development with React Native.`;
     }
-   if (lower.includes('leadership') || lower.includes('leader')) {
+    if (lower.includes('leadership') || lower.includes('leader')) {
       return portfolioKnowledge.leadership.join(' ');
     }
     if (lower.includes('blockchain')) {
@@ -369,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lower.includes('contact') || lower.includes('hire') || lower.includes('available')) {
       return `Elly is ${portfolioKnowledge.identity.availability} You can contact him at ${portfolioKnowledge.identity.contact.email}, GitHub ${portfolioKnowledge.identity.contact.github}, or LinkedIn ${portfolioKnowledge.identity.contact.linkedin}.`;
     }
-    return `${portfolioKnowledge.identity.name} is a ${portfolioKnowledge.identity.headline}. ${portfolioKnowledge.identity.summary} Ask me about his AI projects, React experience, mobile development, desktop applications, blockchain exploration, skills, resume, leadership, projects, or availability.`;
+    return `${portfolioKnowledge.identity.name} is a ${portfolioKnowledge.identity.headline}. ${portfolioKnowledge.identity.summary} Ask me about his AI projects, React experience, React Native mobile work, skills, resume, leadership, projects, or availability.`;
   };
 
   const streamTextInto = (target, text, signal) => new Promise(resolve => {
@@ -401,9 +420,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!userQuestion || !aiChatMessages) return;
     openAiChat();
     addAiMessage('user', userQuestion);
+    const thinking = showAiThinking();
+    setAiBusy(true);
+
+    await new Promise(resolve => window.setTimeout(resolve, 350 + Math.random() * 250));
+    thinking.remove();
+
     const assistantMessage = addAiMessage('assistant', '');
     assistantMessage.classList.add('is-streaming');
-    setAiBusy(true);
     activeController = new AbortController();
 
     try {
