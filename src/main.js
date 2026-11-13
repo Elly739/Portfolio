@@ -372,15 +372,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lower.includes('skill') || lower.includes('technolog') || lower.includes('stack')) {
       return `Elly works with ${skillsList}. His strongest visible areas are frontend engineering, backend APIs, AI/ML systems, cloud architecture, data engineering, and mobile development with React Native.`;
     }
-    if (lower.includes('leadership') || lower.includes('leader')) {
-      return portfolioKnowledge.leadership.join(' ');
-    }
-    if (lower.includes('blockchain')) {
-      return 'Elly has been exploring blockchain technology as part of his innovation work, applying it alongside his AI and distributed systems research.';
+    if (lower.includes('leadership') || lower.includes('leader') || lower.includes('community') || lower.includes('volunteer') || lower.includes('aspire')) {
+      const communityRoles = portfolioKnowledge.communityEngagement
+        .map(({ role, organization, period, summary }) => `${role} at ${organization} (${period}): ${summary}`)
+        .join(' ');
+      return `${portfolioKnowledge.leadership.join(' ')} ${communityRoles}`;
     }
     if (lower.includes('desktop') || lower.includes('c#') || lower.includes('c++') || lower.includes('visual programming')) {
-      const desktopSkills = portfolioKnowledge.skills.filter(s => /C#|C\+\+|Visual Programming/.test(s));
-      return `Yes, Elly builds desktop applications using C# and visual programming tools. He also works with C++ for performance-critical components.`;
+      const programmingLanguages = portfolioKnowledge.skills.filter(skill => /^(C#|C|C\+\+)$/.test(skill));
+      return `Elly lists ${programmingLanguages.join(', ')} among his programming languages. The portfolio does not detail a specific desktop application.`;
     }
     if (lower.includes('project')) {
       return `Elly's featured projects include:\n${projectList}`;

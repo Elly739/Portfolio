@@ -462,6 +462,12 @@ nav { display: flex; align-items: center; gap: 18px; }
 .about-content p { font-size: 1rem; color: var(--text-secondary); margin-bottom: 1rem; }
 .about-content p i { color: var(--primary-light); margin-right: 10px; }
 .highlight { color: var(--primary-light); font-weight: 600; }
+.skills-heading {
+  margin: 0 0 12px;
+  color: var(--text-primary);
+  font: 600 .68rem var(--font-mono);
+  text-transform: uppercase;
+}
 
 /* Skills */
 .skills-grid {
@@ -564,6 +570,15 @@ nav { display: flex; align-items: center; gap: 18px; }
   font-size: 0.9rem;
   line-height: 1.6;
 }
+.leadership-highlights {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-secondary);
+  font-size: .73rem;
+  line-height: 1.7;
+}
+.leadership-highlights li + li { margin-top: 5px; }
+.leadership-highlights li::marker { color: var(--primary-light); }
 
 /* Services */
 .services { background: var(--bg-primary); }
@@ -1736,7 +1751,7 @@ header.site-header {
 
 .tech-stack-section { padding-top: 52px; padding-bottom: 52px; }
 .tech-stack-section .section-title::before { content: 'LANGUAGE, ACCELERATORS & MODERN STANDARDS'; }
-.tech-stack-grid { max-width: none; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.tech-stack-grid { max-width: none; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .tech-group {
   padding: 16px;
   border: 1px solid rgba(148, 163, 184, .1);
@@ -1880,7 +1895,7 @@ footer { background: #090e19; }
   .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .projects .container { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .project-card[data-featured="primary"] { grid-column: span 2; }
-  .tech-stack-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .tech-stack-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .project-detail {

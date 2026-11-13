@@ -3,7 +3,7 @@ export const portfolioKnowledge = {
     name: 'Okello Elly',
     headline: 'Software Engineer | Systems Architect | Innovation Strategist | Human-AI Collaboration Advocate',
     summary:
-      'Okello Elly is a Software Engineer | Systems Architect | Innovation Strategist | Human-AI Collaboration Advocate. He builds intelligent systems, scalable applications, and practical digital products. His work spans AI-powered systems, cloud architecture, data engineering, web apps, mobile development with React Native, blockchain exploration, and human-centered innovation.',
+      'Okello Elly is a Software Engineer | Systems Architect | Innovation Strategist | Human-AI Collaboration Advocate. He builds intelligent systems, scalable applications, and practical digital products. His work spans AI-powered systems, cloud and DevOps foundations, data systems, web apps, mobile development with React Native, networking, and human-centered innovation.',
     availability: 'Open to freelance work, collaborations, contracts, and select projects. Typical response time is 24-48 hours.',
     contact: {
       email: 'okelloelly@zetech.ac.ke',
@@ -40,12 +40,6 @@ export const portfolioKnowledge = {
       summary: 'Building and improving front-end features, interfaces, and user experiences.'
     },
     {
-      role: 'Software Developer',
-      organization: 'Professional Experience',
-      period: '2024-Present',
-      summary: 'Building web applications and software solutions for clients and teams.'
-    },
-    {
       role: 'Freelance Developer',
       organization: 'Self-employed',
       period: '2022-Present',
@@ -53,32 +47,70 @@ export const portfolioKnowledge = {
     }
   ],
   skills: [
+    'Python',
     'JavaScript',
     'TypeScript',
+    'Java',
+    'Kotlin',
+    'SQL',
+    'C#',
+    'C',
+    'C++',
     'React',
-    'Node.js',
-    'Python',
+    'React Native',
+    'Expo',
+    'Next.js',
     'HTML',
     'CSS',
-    'Kotlin',
-    'React Native',
-    'Android',
-    'XML',
-    'C#',
-    'C++',
+    'Android Studio',
+    'Jetpack Compose',
+    'Material Design',
+    'FastAPI',
+    'Flask',
+    'REST APIs',
+    'Pydantic',
+    'API integration',
+    'JWT authentication',
+    'Role-based access control',
     'MySQL',
-    'PLpgSQL',
-    'NumPy',
-    'Vite',
-    'TensorFlow',
-    'AI/ML',
-    'Cloud architecture',
-    'Data engineering',
-    'Blockchain',
-    'Backend APIs',
-    'Figma',
+    'SQLite',
+    'Relational database design',
+    'PL/SQL',
+    'Firebase',
+    'Firestore',
+    'Claude API',
+    'Generative AI application development',
+    'LangGraph',
+    'CrewAI',
+    'n8n',
+    'Zapier',
+    'Cloud service models',
+    'Deployment models',
+    'Containerization',
+    'CI/CD',
+    'Infrastructure as code',
+    'Monitoring',
+    'Logging',
+    'IAM',
+    'Backup and disaster recovery',
+    'Git',
     'GitHub',
-    'Vercel'
+    'VS Code',
+    'Object-oriented programming',
+    'Software testing',
+    'System design',
+    'TCP/IP',
+    'VLANs',
+    'Routing',
+    'Switching',
+    'IP addressing',
+    'Network automation',
+    'Cybersecurity fundamentals',
+    'PuLP',
+    'CBC',
+    'Linear programming',
+    'ReportLab',
+    'Data-driven reporting'
   ],
   services: [
     'Web development',
@@ -207,6 +239,20 @@ export const portfolioKnowledge = {
     'Builds public-facing leadership and communication platforms.',
     'Explores how technology can shape industries, organizations, and the future of Africa.'
   ],
+  communityEngagement: [
+    {
+      role: 'Alumni Channel Lead — Climate/Sustainability & Education',
+      organization: 'Aspire Institute',
+      period: 'October 2026 – Present',
+      summary: 'Supports alumni engagement and community activities across climate, sustainability, and education channels, encouraging knowledge-sharing, collaboration, and participation.'
+    },
+    {
+      role: 'Community Volunteer Moderator',
+      organization: 'Aspire Leaders Program',
+      period: '2026',
+      summary: 'Supported participant engagement, peer learning, and constructive community interaction across programme cohorts. Contributed to group discussions and helped maintain supportive, collaborative learning environments.'
+    }
+  ],
   resumeSummary:
-    'Okello Elly is a Software Engineering student at Zetech University and a software developer focused on full-stack web apps, AI/ML systems, mobile development with React Native, cloud/data systems, and innovation strategy. He is currently contributing to AfroNative at Momentum Labs and building an AI-powered e-commerce platform with Supabase, React, and Python FastAPI. He has shipped projects across AI, edtech, e-commerce, sustainability, social discovery, simulations, and campus platforms.'
+    'Okello Elly is a Software Engineering student at Zetech University focused on full-stack applications, AI, mobile development with React Native, cloud and DevOps foundations, networking, and system design. He contributes to AfroNative at Momentum Labs and serves as Alumni Channel Lead for Climate/Sustainability & Education at Aspire Institute, as well as a Community Volunteer Moderator for the Aspire Leaders Program. His projects span AI, edtech, e-commerce, sustainability, social discovery, simulations, and campus platforms.'
 };

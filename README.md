@@ -27,7 +27,7 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 
 - **Home** (`index.html`) - Hero, profile ring, project/contact actions, proof points, and core technology dispatch
 - **About** (`about.html`) - Personal introduction, skills, current focus, and availability
-- **Experience** (`experience.html`) - Education and professional timeline
+- **Experience** (`experience.html`) - Education, professional experience, and leadership/community engagement
 - **Services** (`services.html`) - Services, delivery process, skill depth, and tools
 - **Projects** (`projects.html`) - Filterable case studies and featured work
 - **Contact** (`contact.html`) - Resume download and contact form
@@ -43,20 +43,32 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 
 ## Skills & Tech Stack
 
-### Languages
-TypeScript, JavaScript, C#, C++, Kotlin, Python
+### Programming
+Python, JavaScript, TypeScript, Java, Kotlin, SQL, C#, C, C++
 
-### Web & Mobile
-HTML, CSS, React, Next.js, Vite, Android, XML
+### Frontend & Mobile
+React, React Native, Expo, Next.js, HTML, CSS, Android Studio, Jetpack Compose, Material Design
 
-### Data
-MySQL, PLpgSQL, SQLite, NumPy
+### Backend & APIs
+FastAPI, Flask, REST APIs, Pydantic, API integration, JWT authentication, role-based access control
 
-### AI & Innovation Tools
-Base44, Claude, Lovable, Qwen AI, Bolt
+### Databases
+MySQL, SQLite, relational database design, PL/SQL, Firebase/Firestore
 
-### Blockchain
-Blockchain exploration
+### AI & Automation
+Claude API, generative AI application development, LangGraph, CrewAI, n8n, Zapier
+
+### Cloud & DevOps
+Cloud service and deployment models, containerization, CI/CD concepts, infrastructure-as-code fundamentals, monitoring, logging, IAM, backup and disaster recovery
+
+### Engineering & Tools
+Git, GitHub, VS Code, object-oriented programming, software testing, system design
+
+### Networking & Security
+TCP/IP, VLANs, routing, switching, IP addressing, network automation concepts, cybersecurity fundamentals
+
+### Optimization & Reporting
+PuLP, CBC, linear programming, ReportLab, data-driven reporting
 
 ## Projects
 
