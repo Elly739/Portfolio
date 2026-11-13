@@ -38,6 +38,10 @@ test('portfolio fallback answers skills, education, projects, services, and lead
   assert.match(buildLocalAnswer('Does Elly use Java?', portfolioKnowledge), /Java is listed/);
   assert.match(buildLocalAnswer('What services are available?', portfolioKnowledge), /Web development/);
   assert.match(buildLocalAnswer('What community work has Elly done?', portfolioKnowledge), /Aspire Institute/);
+  const experienceAnswer = buildLocalAnswer('Tell me about work experience', portfolioKnowledge);
+  assert.match(experienceAnswer, /Momentum Labs/);
+  assert.match(experienceAnswer, /Flyrank/);
+  assert.doesNotMatch(experienceAnswer, /Campus Pulse/);
 });
 
 test('portfolio fallback is explicit about unsupported details and invalid input', () => {
@@ -67,6 +71,7 @@ test('chat API validates requests and uses local answers without a provider key'
     assert.equal(response.code, 200);
     assert.match(response.body, /Aspire Institute/);
     assert.match(response.body, /Aspire Leaders Program/);
+    assert.equal(response.headers['X-Portfolio-Assistant-Mode'], 'local');
   } finally {
     if (previousKey === undefined) delete process.env.ANTHROPIC_API_KEY;
     else process.env.ANTHROPIC_API_KEY = previousKey;
@@ -113,6 +118,7 @@ test('chat API streams provider output with portfolio context and the current de
     assert.equal(providerRequest.stream, true);
     assert.equal(providerRequest.messages.at(-1).content, 'Tell me about your community work');
     assert.match(providerRequest.system, /Community Volunteer Moderator/);
+    assert.match(providerRequest.system, /Do not substitute the project catalog for work history/);
   } finally {
     globalThis.fetch = previousFetch;
     if (previousKey === undefined) delete process.env.ANTHROPIC_API_KEY;

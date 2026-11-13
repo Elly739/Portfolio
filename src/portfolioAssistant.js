@@ -93,6 +93,12 @@ export function buildLocalAnswer(question, knowledge = {}) {
     return `Yes. ${mentionedSkills.join(', ')} ${mentionedSkills.length === 1 ? 'is' : 'are'} listed among Elly's technical skills.`;
   }
 
+  if (/\b(experience|career|intern|employment|freelance)\b/.test(lower)) {
+    return experience.length
+      ? experience.map(item => `${item.role} at ${item.organization} (${item.period}): ${item.summary}`).join(' ')
+      : 'Professional experience details are not listed in the portfolio yet.';
+  }
+
   const matchedProjects = projects.filter(project => lower.includes(project.name.toLowerCase()));
   if (matchedProjects.length) return matchedProjects.map(formatProject).join(' ');
 
@@ -109,12 +115,6 @@ export function buildLocalAnswer(question, knowledge = {}) {
 
   if (/\b(project|portfolio|work)\b/.test(lower)) {
     return `Featured projects include ${projects.map(project => `${project.name}: ${project.summary}`).join(' ')}`;
-  }
-
-  if (/\b(experience|career|intern|employment|freelance)\b/.test(lower)) {
-    return experience.length
-      ? experience.map(item => `${item.role} at ${item.organization} (${item.period}): ${item.summary}`).join(' ')
-      : 'Professional experience details are not listed in the portfolio yet.';
   }
 
   const introduction = identity.summary || `${identity.name || 'Okello Elly'} is a ${identity.headline || 'Software Engineer'}. He builds intelligent systems and practical digital products.`;

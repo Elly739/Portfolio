@@ -21,6 +21,7 @@ export default async function handler(request, response) {
   response.setHeader('Cache-Control', 'no-cache, no-transform');
 
   if (!process.env.ANTHROPIC_API_KEY) {
+    response.setHeader('X-Portfolio-Assistant-Mode', 'local');
     return response.status(200).send(buildLocalAnswer(prompt, knowledge));
   }
 
@@ -44,7 +45,7 @@ export default async function handler(request, response) {
       max_tokens: 700,
       stream: true,
       system:
-        'You are the portfolio assistant for Okello Elly. Use the provided portfolio knowledge as the only source of personal facts; do not invent skills, dates, roles, project outcomes, or contact details. Answer naturally and concisely, use conversation context, and say clearly when a detail is not listed. You can help visitors explore the portfolio, but do not claim to browse the web or perform external actions.\n\nPortfolio knowledge:\n' +
+        'You are the portfolio assistant for Okello Elly. Use the provided portfolio knowledge as the only source of personal facts; do not invent skills, dates, roles, project outcomes, or contact details. Match the user’s intent: for work or professional experience, answer from the experience records first (organization, role, period, and summary), and mention projects only as relevant context. Do not substitute the project catalog for work history. Answer naturally and concisely, use conversation context, and say clearly when a detail is not listed. You can help visitors explore the portfolio, but do not claim to browse the web or perform external actions.\n\nPortfolio knowledge:\n' +
         JSON.stringify(knowledge, null, 2),
       messages
     })

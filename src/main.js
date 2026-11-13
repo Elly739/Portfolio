@@ -385,14 +385,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (!response.ok || !response.body) throw new Error('AI API unavailable');
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      assistantMessage.textContent = '';
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        assistantMessage.textContent += decoder.decode(value, { stream: true });
-        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+      if (response.headers.get('X-Portfolio-Assistant-Mode') === 'local') {
+        await streamTextInto(assistantMessage, await response.text(), activeController.signal);
+      } else {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        assistantMessage.textContent = '';
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          assistantMessage.textContent += decoder.decode(value, { stream: true });
+          aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+        }
       }
     } catch (error) {
       if (error.name !== 'AbortError') {
