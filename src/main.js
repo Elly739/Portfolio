@@ -1,4 +1,5 @@
 import { portfolioKnowledge } from './portfolioKnowledge.js';
+import { buildLocalAnswer } from './portfolioAssistant.js';
 
 // Portfolio JavaScript
 document.addEventListener('DOMContentLoaded', () => {
@@ -262,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'From: ' + name + ' <' + email + '>\n\n' +
         message
       );
-      const mailto = 'mailto:iamellyokello@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+      const mailto = 'mailto:' + portfolioKnowledge.identity.contact.email + '?subject=' + encodeURIComponent(subject) + '&body=' + body;
       if (status) status.textContent = 'Opening your email client…';
       const link = document.createElement('a');
       link.href = mailto;
@@ -336,61 +337,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return thinking;
   };
 
-  const buildLocalAnswer = question => {
-    const lower = question.toLowerCase();
-    const skillsList = portfolioKnowledge.skills.join(', ');
-    const projectList = portfolioKnowledge.projects.map(project => `${project.name}: ${project.summary}`).join('\n');
-
-    if (lower.includes('resume') || lower.includes('cv') || lower.includes('summar')) {
-      return portfolioKnowledge.resumeSummary;
-    }
-    if (lower.includes('ai') || lower.includes('machine learning') || lower.includes('ml')) {
-      const aiProjects = portfolioKnowledge.projects.filter(project => /ai|machine|tensorflow|energy|sustainability|language|learning|pronunciation/i.test(`${project.category} ${project.summary} ${project.technologies.join(' ')}`));
-      if (!aiProjects.length) return 'The portfolio highlights AI/ML as a core focus area, but no matching AI project details were found in the knowledge base.';
-      return `Projects involving AI include ${aiProjects.map(project => project.name).join(', ')}. ${aiProjects.map(project => `${project.name} focuses on ${project.summary}`).join(' ')}`;
-    }
-    if (lower.includes('react native') || lower.includes('afronative')) {
-      const rnProjects = portfolioKnowledge.projects.filter(project =>
-        /react native|afronative|mobile.*learning|language.*learning/i.test(`${project.name} ${project.summary} ${project.technologies.join(' ')}`)
-      );
-      if (rnProjects.length) {
-        return `Yes. Elly is currently contributing to ${rnProjects.map(project => project.name).join(' and ')} at Momentum Labs — an AI-powered African language learning platform built with React Native, focused on mobile-first education, pronunciation feedback, conversational learning, and interactive lessons.`;
-      }
-      return 'React Native appears in Elly\'s mobile development skill set. He is currently applying it at Momentum Labs on the AfroNative language learning platform.';
-    }
-    if (lower.includes('react')) {
-      const reactProjects = portfolioKnowledge.projects.filter(project => project.technologies.some(tech => tech.toLowerCase() === 'react'));
-      return reactProjects.length ? `Yes. Elly has React experience, especially through ${reactProjects.map(project => project.name).join(', ')}.` : "React appears in Elly's broader front-end skill set, and his portfolio emphasizes modern front-end engineering.";
-    }
-    if (lower.includes('android') || lower.includes('mobile')) {
-      const mobileProjects = portfolioKnowledge.projects.filter(project => project.technologies.some(tech => /android|kotlin|xml|react native/i.test(tech)));
-      if (mobileProjects.length) {
-        return `Yes, Elly has mobile development experience. ${mobileProjects.map(project => `${project.name}`).join(', ')} involve mobile development with React Native, Kotlin, and XML.`;
-      }
-      return "The portfolio includes mobile development services for Android and React Native apps.";
-    }
-    if (lower.includes('skill') || lower.includes('technolog') || lower.includes('stack')) {
-      return `Elly works with ${skillsList}. His strongest visible areas are frontend engineering, backend APIs, AI/ML systems, cloud architecture, data engineering, and mobile development with React Native.`;
-    }
-    if (lower.includes('leadership') || lower.includes('leader') || lower.includes('community') || lower.includes('volunteer') || lower.includes('aspire')) {
-      const communityRoles = portfolioKnowledge.communityEngagement
-        .map(({ role, organization, period, summary }) => `${role} at ${organization} (${period}): ${summary}`)
-        .join(' ');
-      return `${portfolioKnowledge.leadership.join(' ')} ${communityRoles}`;
-    }
-    if (lower.includes('desktop') || lower.includes('c#') || lower.includes('c++') || lower.includes('visual programming')) {
-      const programmingLanguages = portfolioKnowledge.skills.filter(skill => /^(C#|C|C\+\+)$/.test(skill));
-      return `Elly lists ${programmingLanguages.join(', ')} among his programming languages. The portfolio does not detail a specific desktop application.`;
-    }
-    if (lower.includes('project')) {
-      return `Elly's featured projects include:\n${projectList}`;
-    }
-    if (lower.includes('contact') || lower.includes('hire') || lower.includes('available')) {
-      return `Elly is ${portfolioKnowledge.identity.availability} You can contact him at ${portfolioKnowledge.identity.contact.email}, GitHub ${portfolioKnowledge.identity.contact.github}, or LinkedIn ${portfolioKnowledge.identity.contact.linkedin}.`;
-    }
-    return `${portfolioKnowledge.identity.name} is a ${portfolioKnowledge.identity.headline}. ${portfolioKnowledge.identity.summary} Ask me about his AI projects, React experience, React Native mobile work, skills, resume, leadership, projects, or availability.`;
-  };
-
   const streamTextInto = (target, text, signal) => new Promise(resolve => {
     let index = 0;
     target.textContent = '';
@@ -450,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } catch (error) {
       if (error.name !== 'AbortError') {
-        await streamTextInto(assistantMessage, buildLocalAnswer(userQuestion), activeController.signal);
+        await streamTextInto(assistantMessage, buildLocalAnswer(userQuestion, portfolioKnowledge), activeController.signal);
       }
     } finally {
       const finalAnswer = assistantMessage.textContent.trim();
