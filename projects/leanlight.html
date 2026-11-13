@@ -3,27 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c111f">
+  <meta name="description" content="A project case study from Okello Elly's portfolio.">
   <title>Leanlight | Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="leanlight.html">Projects</a></li>
+<body class="project-detail-page page-project-detail">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="logo"><a href="../index.html">Elly<span class="logo-signal" aria-hidden="true"></span></a></div>
+    <nav aria-label="Primary">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="primaryNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-list" id="primaryNav">
+        <li><a class="nav-link" href="../index.html">Home</a></li>
+        <li><a class="nav-link" href="../about.html">About</a></li>
+        <li><a class="nav-link" href="../experience.html">Experience</a></li>
+        <li><a class="nav-link" href="../services.html">Services</a></li>
+        <li><a class="nav-link" href="../projects.html" aria-current="page">Projects</a></li>
+        <li><a class="nav-link" href="../contact.html">Contact</a></li>
       </ul>
     </nav>
+    <a class="header-resume" href="/assets/pdf/RESUME.pdf" download>Resume.pdf <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+      <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
   </header>
-
-  <section class="project">
-    <h1>Leanlight</h1>
-    <img src="../assets/images/leanlight.png" alt="Leanlight Screenshot">
-    <p><strong>Description:</strong> Leanlight is a modern web application designed for [insert project purpose].</p>
-    <p><strong>Tech Stack:</strong> Node.js, Vite, HTML, CSS, JS</p>
-    <a href="https://github.com/Elly739/learnlight" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
-  </section>
+  <main id="main">
+    <section class="project-detail">
+      <div class="container project-detail-card">
+        <p class="project-detail-kicker">PROJECT / CASE STUDY</p>
+        <h1>Leanlight</h1>
+        <img src="../assets/images/learnlight.png" alt="Leanlight Screenshot">
+        <p><strong>Description:</strong> Leanlight is a modern web application designed for [insert project purpose].</p>
+        <p><strong>Tech Stack:</strong> Node.js, Vite, HTML, CSS, JS</p>
+        <a href="https://github.com/Elly739/learnlight" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+      </div>
+    </section>
+  </main>
+  <aside class="ai-chat" id="aiChat" aria-label="Portfolio AI assistant">
+    <button class="ai-chat-toggle" id="aiChatToggle" type="button" aria-controls="aiChatPanel" aria-expanded="false">
+      <i class="fas fa-message" aria-hidden="true"></i>
+      <span>Ask AI</span>
+    </button>
+    <div class="ai-chat-panel" id="aiChatPanel" aria-hidden="true">
+      <div class="ai-chat-header">
+        <div>
+          <p class="ai-kicker">Portfolio AI</p>
+          <h2>Ask about Elly</h2>
+        </div>
+        <button class="ai-icon-button" id="aiChatClose" type="button" aria-label="Close AI assistant">
+          <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="ai-chat-messages" id="aiChatMessages" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <div class="ai-prompts" aria-label="Suggested questions">
+        <button type="button" data-ai-prompt="Summarise Elly's resume.">Resume</button>
+        <button type="button" data-ai-prompt="Show me projects involving AI.">AI projects</button>
+        <button type="button" data-ai-prompt="Which technologies does Elly know?">Skills</button>
+      </div>
+      <form class="ai-chat-form" id="aiChatForm">
+        <label class="sr-only" for="aiChatInput">Ask the portfolio AI</label>
+        <textarea id="aiChatInput" rows="2" placeholder="Ask about projects, skills, resume..." required></textarea>
+        <div class="ai-chat-actions">
+          <button class="ai-stop-button" id="aiStopButton" type="button" disabled><i class="fas fa-stop" aria-hidden="true"></i> Stop</button>
+          <button class="ai-send-button" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send</button>
+        </div>
+      </form>
+    </div>
+  </aside>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Elly</div>
+      <p>&copy; <span id="year"></span> Elly | Software Engineer</p>
+      <div class="footer-social">
+        <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <a href="#main" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+  </footer>
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="module" src="../src/main.js"></script>
 </body>
-<script src="../main.js"></script>
 </html>

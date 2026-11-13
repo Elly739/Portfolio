@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Okello Elly - Software Engineer & Innovator. Building intelligent systems, scalable applications, and practical digital solutions.">
+  <meta name="description" content="Okello Elly - Software Engineer and Systems Architect building intelligent systems and scalable digital experiences.">
   <meta name="keywords" content="software engineer, developer, portfolio, web development, AI, machine learning, cloud computing">
   <meta name="author" content="Okello Elly">
-  <meta name="theme-color" content="#0f172a">
+  <meta name="theme-color" content="#0c111f">
   <meta name="color-scheme" content="dark light">
 
   <!-- Open Graph / Social Media -->
@@ -30,7 +30,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/images/profile.png">
 
   <!-- Icons -->
@@ -53,49 +53,44 @@
   </style>
 
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
+<body class="page-home">
+<a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="logo"><a href="#home">Elly</a></div>
+    <div class="logo"><a href="index.html">Elly<span class="logo-signal" aria-hidden="true"></span></a></div>
     <nav aria-label="Primary">
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="primaryNav" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <ul class="nav-list" id="primaryNav">
-        <li><a class="nav-link" href="#home"><i class="fas fa-house" aria-hidden="true"></i>Home</a></li>
-        <li><a class="nav-link" href="#about"><i class="fas fa-user" aria-hidden="true"></i>About</a></li>
-        <li><a class="nav-link" href="#education"><i class="fas fa-graduation-cap" aria-hidden="true"></i>Education</a></li>
-        <li><a class="nav-link" href="#experience"><i class="fas fa-briefcase" aria-hidden="true"></i>Experience</a></li>
-        <li><a class="nav-link" href="#services"><i class="fas fa-layer-group" aria-hidden="true"></i>Services</a></li>
-        <li><a class="nav-link" href="#projects"><i class="fas fa-code-branch" aria-hidden="true"></i>Projects</a></li>
-        <li><a class="nav-link" href="#cv"><i class="fas fa-file-lines" aria-hidden="true"></i>Resume</a></li>
-        <li><a class="nav-link" href="#ai-assistant"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>AI Assistant</a></li>
-        <li><a class="nav-link" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Contact</a></li>
+        <li><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="experience.html">Experience</a></li>
+        <li><a class="nav-link" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <a class="header-resume" href="/assets/pdf/RESUME.pdf" download>Resume.pdf <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
       <i class="fas fa-moon" aria-hidden="true"></i>
     </button>
   </header>
-
   <main id="main">
-    <section id="home" class="hero">
+
+<section id="home" class="hero">
       <div class="hero-container">
         <div class="hero-text">
           <div class="hero-pill">Available for select projects</div>
           <span class="greeting">Hello, I am</span>
-          <h1>Okello Elly</h1>
+          <h1><span>Okello</span> <strong>Elly</strong></h1>
           <h2 class="typewriter" aria-live="polite">
             <span class="typed-text"></span>
             <span class="cursor">|</span>
           </h2>
           <p>Building intelligent systems, scalable applications, and premium digital experiences that feel effortless.</p>
           <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-outline">Contact Me</a>
+            <a href="projects.html" class="btn btn-primary">View Projects</a>
+            <a href="contact.html" class="btn btn-outline">Contact Me</a>
           </div>
           <div class="hero-stats">
             <div class="hero-stat">
@@ -109,6 +104,10 @@
             <div class="hero-stat">
               <span class="stat-value">AI • Cloud</span>
               <span class="stat-label">Focus Areas</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Execution Focus</span>
             </div>
           </div>
           <div class="social-links">
@@ -129,11 +128,24 @@
         <div class="hero-image">
           <img src="assets/images/profile.png" alt="Okello Elly portrait" fetchpriority="high" width="280" height="280" decoding="async">
           <div class="hero-orbit" aria-hidden="true"></div>
+          <span class="hero-image-status" aria-hidden="true">ARCH_04&nbsp; // &nbsp;STABLE</span>
+          <span class="hero-image-latency" aria-hidden="true"><i class="fas fa-bolt"></i> LATENCY &lt; 24ms</span>
         </div>
       </div>
     </section>
-
-    <section class="highlights">
+<section class="home-stack" aria-labelledby="home-stack-title">
+  <div class="container">
+    <div class="home-stack-heading">
+      <p class="eyebrow" id="home-stack-title">VECTOR / CORE COMPETENCY DISPATCH</p>
+      <p class="home-stack-domains"><span>#DistributedSystems</span><span>#AIEngineering</span><span>#AutonomousAI</span><span>#TechEcosystems</span></p>
+    </div>
+    <div class="home-stack-list">
+      <span><b>TS</b> TypeScript</span><span><b>Py</b> Python</span><span><b>Nx</b> Next.js 15</span>
+      <span><b>KT</b> Kotlin</span><span><b>DB</b> Docker</span><span><b>Pg</b> PostgreSQL</span><span><b>AI</b> Claude / Agents</span>
+    </div>
+  </div>
+</section>
+<section class="highlights">
       <div class="container highlights-grid">
         <div class="highlight-card" data-reveal>
           <p class="highlight-label">Featured Work</p>
@@ -152,8 +164,7 @@
         </div>
       </div>
     </section>
-
-    <section class="proof">
+<section class="proof">
       <div class="container proof-grid" data-reveal>
         <div class="proof-item">
           <h3>6+</h3>
@@ -169,643 +180,13 @@
         </div>
       </div>
     </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <p><i class="fas fa-rocket" aria-hidden="true"></i> 👨🏽‍💻 Software Engineer | Systems Architect | Innovation Strategist | Human-AI Collaboration Advocate</p>
-          <p><i class="fas fa-globe-africa" aria-hidden="true"></i> 🌍 Exploring how technology and innovation can shape industries, organizations, and the future of Africa.</p>
-        </div>
-
-        <div class="skills-grid">
-          <div class="skill-card" data-reveal><i class="fab fa-js"></i><span>JavaScript</span></div>
-          <div class="skill-card" data-reveal><i class="fab fa-node-js"></i><span>Node.js</span></div>
-          <div class="skill-card" data-reveal><i class="fab fa-python"></i><span>Python</span></div>
-          <div class="skill-card" data-reveal><i class="fab fa-html5"></i><span>HTML</span></div>
-          <div class="skill-card" data-reveal><i class="fab fa-css3-alt"></i><span>CSS</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-code"></i><span>TypeScript</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-mobile-screen"></i><span>React Native</span></div>
-          <div class="skill-card" data-reveal><i class="fab fa-android"></i><span>Android</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-code"></i><span>Kotlin</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-code"></i><span>XML</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-code"></i><span>C#</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-code"></i><span>C++</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-database"></i><span>MySQL</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-database"></i><span>PLpgSQL</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-chart-bar"></i><span>NumPy</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-cloud"></i><span>Cloud</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-brain"></i><span>AI/ML</span></div>
-          <div class="skill-card" data-reveal><i class="fas fa-database"></i><span>Data</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="now">
-      <div class="container now-grid">
-        <div class="now-card" data-reveal>
-          <h2 class="section-title">Currently</h2>
-          <p class="section-subtitle">What I am focused on now</p>
-          <ul class="now-list">
-            <li><i class="fas fa-mobile-screen" aria-hidden="true"></i> Contributing to AfroNative using React Native at Momentum Labs.</li>
-            <li><i class="fas fa-code" aria-hidden="true"></i> Building full-stack web apps and AI-driven products.</li>
-            <li><i class="fas fa-graduation-cap" aria-hidden="true"></i> BSc Software Engineering, Zetech University.</li>
-            <li><i class="fas fa-brain" aria-hidden="true"></i> Exploring AI, mobile, and practical digital solutions.</li>
-          </ul>
-          <a href="#contact" class="btn btn-ghost">Let's Collaborate</a>
-        </div>
-        <div class="now-card now-panel" data-reveal>
-          <h3>Availability</h3>
-          <p>Open to freelance, collaborations, and project work.</p>
-          <div class="now-tags">
-            <span>Web Apps</span>
-            <span>AI/ML</span>
-            <span>Cloud</span>
-            <span>Data</span>
-          </div>
-          <p class="now-note">Response time: 24–48 hours.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="education">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3><i class="fas fa-graduation-cap" aria-hidden="true"></i> Bachelor of Science in Software Engineering</h3>
-              <p class="timeline-school">Zetech University</p>
-              <p class="timeline-date"><i class="fas fa-calendar" aria-hidden="true"></i> 2025 - 2027</p>
-              <p>Focused on software architecture, data structures, algorithms, and modern development practices.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3><i class="fas fa-school" aria-hidden="true"></i> High School</h3>
-              <p class="timeline-school">St. Joseph's School Rapogi</p>
-              <p class="timeline-date"><i class="fas fa-calendar" aria-hidden="true"></i> 2020 - 2023</p>
-              <p>Completed secondary education with a strong foundation in science subjects.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="experience">
-      <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3><i class="fas fa-mobile-screen" aria-hidden="true"></i> AI & Mobile Development Intern</h3>
-              <p class="timeline-school">Momentum Labs</p>
-              <p class="timeline-date"><i class="fas fa-calendar" aria-hidden="true"></i> August 2026 – Present</p>
-              <p>Contributing to AfroNative, an AI-powered African language learning platform built with React Native focused on practical, mobile-first language education.</p>
-              <p>Developing mobile-first learning experiences incorporating native African languages, pronunciation feedback, conversational learning, and interactive lessons.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3><i class="fas fa-laptop-code" aria-hidden="true"></i> Front-End Engineering Intern</h3>
-              <p class="timeline-school">Flyrank</p>
-              <p class="timeline-date"><i class="fas fa-calendar" aria-hidden="true"></i> July 2026</p>
-              <p>Building and improving front-end features, interfaces, and user experiences as a front-end engineering intern.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3><i class="fas fa-laptop-code" aria-hidden="true"></i> Software Developer</h3>
-              <p class="timeline-school">Professional Experience</p>
-              <p class="timeline-date"><i class="fas fa-calendar" aria-hidden="true"></i> 2024 - Present</p>
-            <p>Building web applications and software solutions for clients and teams.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-reveal>
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3><i class="fas fa-user-tie" aria-hidden="true"></i> Freelance Developer</h3>
-              <p class="timeline-school">Self-employed</p>
-              <p class="timeline-date"><i class="fas fa-calendar" aria-hidden="true"></i> 2022 - Present</p>
-            <p>Delivering websites and apps with modern tech and clean code.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="services">
-      <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-subtitle">What I Can Do For You</p>
-        <div class="services-grid">
-          <div class="service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true"><i class="fas fa-code"></i></div>
-            <h3>Web Development</h3>
-            <p>Modern, responsive websites and web applications.</p>
-          </div>
-          <div class="service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true"><i class="fas fa-server"></i></div>
-            <h3>Backend Development</h3>
-            <p>Robust APIs and server-side solutions.</p>
-          </div>
-          <div class="service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
-            <h3>AI Solutions</h3>
-            <p>Machine learning models and intelligent systems.</p>
-          </div>
-          <div class="service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true"><i class="fas fa-cloud"></i></div>
-            <h3>Cloud Services</h3>
-            <p>Cloud infrastructure design and deployment.</p>
-          </div>
-          <div class="service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true"><i class="fas fa-database"></i></div>
-            <h3>Data Engineering</h3>
-            <p>Data pipelines and analytics systems.</p>
-          </div>
-          <div class="service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true"><i class="fas fa-tools"></i></div>
-            <h3>Technical Consulting</h3>
-            <p>Guidance on software architecture and delivery.</p>
-          </div>
-          <div class="service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true"><i class="fab fa-android"></i></div>
-            <h3>Mobile Development</h3>
-            <p>Native Android apps with Kotlin & XML.</p>
-          </div>
-          <div class="service-card" data-reveal>
-          <div class="service-icon" aria-hidden="true"><i class="fas fa-desktop"></i></div>
-            <h3>Desktop Applications</h3>
-            <p>Cross-platform desktop software with C# and visual programming.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-filters" role="group" aria-label="Project filters">
-          <button class="filter-chip is-active" data-filter="all" aria-pressed="true">
-            <span class="chip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" role="img" focusable="false">
-                <rect x="4" y="5" width="10" height="10" rx="2"></rect>
-                <rect x="10" y="9" width="10" height="10" rx="2"></rect>
-              </svg>
-            </span>
-            All
-          </button>
-          <button class="filter-chip" data-filter="web" aria-pressed="false">
-            <span class="chip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" role="img" focusable="false">
-                <circle cx="12" cy="12" r="9"></circle>
-                <path d="M3 12h18"></path>
-                <path d="M12 3a12 12 0 0 0 0 18"></path>
-                <path d="M12 3a12 12 0 0 1 0 18"></path>
-              </svg>
-            </span>
-            Web
-          </button>
-          <button class="filter-chip" data-filter="ai" aria-pressed="false">
-            <span class="chip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" role="img" focusable="false">
-                <rect x="6" y="6" width="12" height="12" rx="2"></rect>
-                <path d="M9 2v4"></path>
-                <path d="M15 2v4"></path>
-                <circle cx="10" cy="12" r="1"></circle>
-                <circle cx="14" cy="12" r="1"></circle>
-              </svg>
-            </span>
-            AI/ML
-          </button>
-          <button class="filter-chip" data-filter="interactive" aria-pressed="false">
-            <span class="chip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" role="img" focusable="false">
-                <path d="M4 20l6-6"></path>
-                <path d="M14 4l1.5 3 3 1.5-3 1.5L14 13l-1.5-3-3-1.5 3-1.5L14 4z"></path>
-                <path d="M17 14l.8 1.6 1.6.8-1.6.8-.8 1.6-.8-1.6-1.6-.8 1.6-.8.8-1.6z"></path>
-              </svg>
-            </span>
-            Interactive
-          </button>
-        </div>
-
-        <div class="project-card" data-reveal data-category="ai">
-          <div class="project-image">
-            <img src="assets/images/AI-Powered E-Commerce.png" alt="AI-Powered E-Commerce Platform preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-shopping-cart" aria-hidden="true"></i> AI-Powered E-Commerce Platform</h3>
-            <p>Full-stack e-commerce platform enhanced with AI recommendations, intelligent search, AI shopping assistant, and analytics.</p>
-            <p class="project-date"><i class="fas fa-calendar" aria-hidden="true"></i> 2026</p>
-            <ul class="project-bullets">
-              <li>Built with React frontend, Node.js/Express backend, Supabase database, and Python FastAPI AI service for recommendations and chatbot.</li>
-              <li>Features AI-powered product search, personalized recommendations, wishlist, cart, Stripe payments, order tracking, and admin analytics dashboard.</li>
-              <li>Combines full-stack development, authentication, payments, AI/LLM integration, semantic search, and data visualization.</li>
-            </ul>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Builder</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Focus: Full-stack + AI</span>
-            </div>
-            <div class="tech-stack">
-              <span>React</span><span>Node.js</span><span>Express</span><span>Supabase</span><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>Stripe</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/Elly739/AI-Powered-E-Commerce-Platform" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-reveal data-category="ai">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop" srcset="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop 600w, https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=900&h=600&fit=crop 900w, https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&h=800&fit=crop 1200w" sizes="(max-width: 768px) 100vw, 900px" alt="VumaGrid project preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-bolt" aria-hidden="true"></i> VumaGrid</h3>
-            <p class="project-subtitle">Founder & Systems Architect</p>
-            <p>AI-Powered Distributed Energy Management System (DERMS)</p>
-            <p class="project-date"><i class="fas fa-calendar" aria-hidden="true"></i> 2026 – Present</p>
-            <ul class="project-bullets">
-              <li>Founded and architecting an AI-powered energy management platform designed to optimize electricity usage in commercial buildings.</li>
-              <li>Designing a distributed energy management system integrating renewable energy sources, backup systems, and grid infrastructure.</li>
-              <li>Developing system concepts focused on intelligent energy optimization, predictive decision-making, and operational efficiency.</li>
-              <li>Applying AI, data analytics, and software architecture principles to address energy reliability and cost management challenges.</li>
-            </ul>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Founder & Systems Architect</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Focus: AI DERMS</span>
-            </div>
-            <div class="tech-stack">
-              <span>AI</span><span>Data Analytics</span><span>Software Architecture</span><span>DERMS</span><span>Cloud</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/Elly739/VumaGrid" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-reveal data-category="web">
-          <div class="project-image">
-            <img src="assets/images/Smarwaste.jpg" alt="Smartwaste project preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-recycle" aria-hidden="true"></i> Smartwaste</h3>
-            <p>A smart waste tracking platform with bin logging, rewards, and admin oversight.</p>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Full-Stack Builder</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Outcome: Better disposal visibility</span>
-            </div>
-            <div class="tech-stack">
-              <span>React</span><span>Vite</span><span>Express</span><span>SQLite</span><span>Tailwind</span>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-ghost" data-modal-open="smartwaste">Case Study</button>
-              <a href="https://github.com/Elly739/Smartwaste.ke" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-reveal data-category="web">
-          <div class="project-image">
-            <img src="assets/images/Chairman.official.jpg" alt="Chairman Official Platform preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-user-tie" aria-hidden="true"></i> Chairman.Official Platform</h3>
-            <p>An in-progress personal platform for leadership updates, public storytelling, and official communication.</p>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Product Owner & Builder</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Status: In Progress</span>
-            </div>
-            <div class="tech-stack">
-              <span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>Framer Motion</span>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-ghost" data-modal-open="chairman">Case Study</button>
-              <a href="https://github.com/Elly739/Chairman.Official-Platform" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-reveal data-category="web">
-          <div class="project-image">
-            <img src="assets/images/learnlight.png" alt="Leanlight project preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-graduation-cap" aria-hidden="true"></i> Leanlight</h3>
-            <p>Curated learning with progress tracking for students.</p>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Builder</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Outcome: Cleaner learning flow</span>
-            </div>
-            <div class="tech-stack">
-              <span>Node.js</span><span>Vite</span><span>HTML</span><span>CSS</span><span>JS</span>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-ghost" data-modal-open="leanlight">Case Study</button>
-              <a href="https://github.com/Elly739/learnlight" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-reveal data-category="ai">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" srcset="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop 600w, https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&h=600&fit=crop 900w, https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=800&fit=crop 1200w" sizes="(max-width: 768px) 100vw, 900px" alt="Teachable Machine project preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-robot" aria-hidden="true"></i> Teachable Machine</h3>
-            <p>An interactive image classification demo built with Teachable Machine.</p>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Developer</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Outcome: Live demo</span>
-            </div>
-            <div class="tech-stack">
-              <span>TensorFlow</span><span>ML</span><span>HTML</span><span>JavaScript</span>
-            </div>
-            <div class="project-actions">
-              <button class="btn btn-ghost" data-modal-open="teachable">Case Study</button>
-              <a href="https://github.com/Elly739/Teachable-Machine-Image-Model" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-reveal data-category="interactive">
-          <div class="project-image">
-            <img src="assets/images/Sim league.png" alt="My Sim League project preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-futbol" aria-hidden="true"></i> My Sim League</h3>
-            <p>A football simulation game offering a realistic managerial career across Europe's top 5 leagues.</p>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Builder</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Focus: Full-stack simulation</span>
-            </div>
-            <div class="tech-stack">
-              <span>TypeScript</span><span>CSS</span><span>JavaScript</span><span>React</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/Elly739/my-sim-league" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-reveal data-category="web">
-          <div class="project-image">
-            <img src="assets/images/Hidden gems.png" alt="Nairobi Hidden Gems project preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Nairobi Hidden Gems</h3>
-            <p>A Gen Z social discovery app for aesthetic places in Nairobi — available as a web app and an Android app.</p>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Builder</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Focus: Social discovery & mobile</span>
-            </div>
-            <div class="tech-stack">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Kotlin</span><span>XML</span><span>Android</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/Elly739/Nairobi-Hidden-Gems" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Web Version</a>
-              <a href="https://github.com/Elly739/nairobi-hidden-gems-" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Android App</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-reveal data-category="web">
-          <div class="project-image">
-            <img src="assets/images/africa-rise.png" alt="Africa Rise Ecosystem project preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-globe-africa" aria-hidden="true"></i> Africa Rise Ecosystem</h3>
-            <p>A digital growth ecosystem connecting learning, skills, and real-world opportunities for African students and young innovators.</p>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Builder</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Focus: Edtech & community</span>
-            </div>
-            <div class="tech-stack">
-              <span>TypeScript</span><span>PLpgSQL</span><span>JavaScript</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/Elly739/africa-rise-ecosystem" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-reveal data-category="web">
-          <div class="project-image">
-            <img src="assets/images/campus-buzz.png" alt="Campus Pulse project preview" loading="lazy" decoding="async" width="900" height="600">
-          </div>
-          <div class="project-info">
-            <h3><i class="fas fa-calendar-check" aria-hidden="true"></i> Campus Pulse</h3>
-            <p>A modern web platform for university students to discover, submit, and RSVP to campus events, hackathons, sports, and more — also available as a mobile app.</p>
-            <div class="project-meta">
-              <span><i class="fas fa-user-check" aria-hidden="true"></i> Role: Builder</span>
-              <span><i class="fas fa-chart-line" aria-hidden="true"></i> Focus: Event platform & mobile</span>
-            </div>
-            <div class="tech-stack">
-              <span>TypeScript</span><span>PLpgSQL</span><span>CSS</span><span>JavaScript</span><span>Kotlin</span><span>XML</span><span>Android</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/Elly739/campus-pulse" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Web Version</a>
-              <a href="https://github.com/Elly739/CampusHub-Student-Portal" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Android App</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="brand-strip">
-      <div class="container">
-        <p class="section-subtitle">Trusted tools & platforms</p>
-        <div class="brand-grid" data-reveal>
-          <span>Vite</span>
-          <span>TensorFlow</span>
-          <span>Node.js</span>
-          <span>GitHub</span>
-          <span>Figma</span>
-          <span>Vercel</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="process">
-      <div class="container">
-        <h2 class="section-title">Work Process</h2>
-        <div class="process-grid">
-          <div class="process-card" data-reveal>
-            <h3>01. Discover</h3>
-            <p>Clarify goals, constraints, and success metrics.</p>
-          </div>
-          <div class="process-card" data-reveal>
-            <h3>02. Design</h3>
-            <p>Create structure, flows, and visual direction.</p>
-          </div>
-          <div class="process-card" data-reveal>
-            <h3>03. Build</h3>
-            <p>Implement with clean, scalable code.</p>
-          </div>
-          <div class="process-card" data-reveal>
-            <h3>04. Launch</h3>
-            <p>Ship, validate, and optimize with feedback.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="skills-depth">
-      <div class="container">
-        <h2 class="section-title">Skills Depth</h2>
-        <div class="skills-bars">
-          <div class="skill-row" data-reveal>
-            <div class="skill-label">Frontend Engineering</div>
-            <div class="skill-bar"><span style="width: 88%"></span></div>
-          </div>
-          <div class="skill-row" data-reveal>
-            <div class="skill-label">Backend & APIs</div>
-            <div class="skill-bar"><span style="width: 78%"></span></div>
-          </div>
-          <div class="skill-row" data-reveal>
-            <div class="skill-label">Cloud & DevOps</div>
-            <div class="skill-bar"><span style="width: 72%"></span></div>
-          </div>
-          <div class="skill-row" data-reveal>
-            <div class="skill-label">AI/ML Systems</div>
-            <div class="skill-bar"><span style="width: 70%"></span></div>
-          </div>
-          <div class="skill-row" data-reveal>
-            <div class="skill-label">Mobile Development</div>
-            <div class="skill-bar"><span style="width: 65%"></span></div>
-          </div>
-          <div class="skill-row" data-reveal>
-            <div class="skill-label">Desktop Applications</div>
-            <div class="skill-bar"><span style="width: 60%"></span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="tech-stack-section">
-      <div class="container">
-        <h2 class="section-title">Tech Stack & Tools</h2>
-        <p class="section-subtitle">Technologies and platforms I work with</p>
-        <div class="tech-stack-grid">
-          <div class="tech-group" data-reveal>
-            <h4>Languages</h4>
-            <div class="tech-tags">
-              <span>TypeScript</span><span>JavaScript</span><span>C#</span><span>C++</span><span>Kotlin</span><span>Python</span>
-            </div>
-          </div>
-          <div class="tech-group" data-reveal>
-            <h4>Web & Mobile</h4>
-            <div class="tech-tags">
-              <span>HTML</span><span>CSS</span><span>React</span><span>Next.js</span><span>Vite</span><span>Android</span><span>XML</span>
-            </div>
-          </div>
-          <div class="tech-group" data-reveal>
-            <h4>Data</h4>
-            <div class="tech-tags">
-              <span>MySQL</span><span>PLpgSQL</span><span>SQLite</span><span>NumPy</span>
-            </div>
-          </div>
-          <div class="tech-group" data-reveal>
-            <h4>AI & Innovation Tools</h4>
-            <div class="tech-tags">
-              <span>Base44</span><span>Claude</span><span>Lovable</span><span>Qwen AI</span><span>Bolt</span>
-            </div>
-          </div>
-          <div class="tech-group" data-reveal>
-            <h4>Blockchain</h4>
-            <div class="tech-tags">
-              <span>Blockchain</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cv" class="cv">
-      <div class="container">
-        <h2 class="section-title">My Resume</h2>
-        <p class="section-subtitle">Download my resume to learn more</p>
-        <div class="cv-card" data-reveal>
-          <div class="cv-icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></div>
-          <h3>Okello Elly - Resume</h3>
-          <p>Software Engineer & Innovator</p>
-          <a href="/assets/pdf/RESUME.pdf" download class="btn btn-primary"><i class="fas fa-download" aria-hidden="true"></i> Download Resume</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container cta-card" data-reveal>
-        <div>
-          <h2>Have a project in mind?</h2>
-          <p>Let us build something fast, clean, and reliable.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="#contact" class="btn btn-primary">Start a Project</a>
-          <a href="#projects" class="btn btn-outline">See Work</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-card" data-reveal>
-          <h3>Let's Connect!</h3>
-          <p>Open to collaborations, contracts, and new product ideas.</p>
-          <form class="contact-form" id="contactForm">
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required>
-              </div>
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required>
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Project inquiry" required>
-            </div>
-            <div class="form-field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-          </form>
-          <div class="contact-info">
-            <a href="mailto:okelloelly@zetech.ac.ke" class="contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><span>okelloelly@zetech.ac.ke</span></a>
-            <a href="tel:+254769182575" class="contact-item"><i class="fas fa-phone" aria-hidden="true"></i><span>+254 769182575</span></a>
-            <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fab fa-linkedin" aria-hidden="true"></i><span>elly-okello</span></a>
-            <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" class="contact-item"><i class="fab fa-github" aria-hidden="true"></i><span>@Elly739</span></a>
-          </div>
-          <div class="social-links-center">
-            <a href="https://github.com/Elly739" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/okello-elly-102788312/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/chairman.official/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/OkelloElly018" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="container home-discovery">
+  <a href="about.html">About Elly <span aria-hidden="true">↗</span></a>
+  <a href="experience.html">Experience <span aria-hidden="true">↗</span></a>
+  <a href="services.html">Services <span aria-hidden="true">↗</span></a>
+</div>
   </main>
-
-  <section id="ai-assistant" class="ai-assistant-section" aria-labelledby="ai-assistant-title">
-    <div class="container">
-      <h2 class="section-title" id="ai-assistant-title">AI Assistant</h2>
-      <p class="section-subtitle">Ask about Elly's work, skills, projects, resume, and availability.</p>
-    </div>
-  </section>
-
-  <aside class="ai-chat" id="aiChat" aria-label="Portfolio AI assistant">
+<aside class="ai-chat" id="aiChat" aria-label="Portfolio AI assistant">
     <button class="ai-chat-toggle" id="aiChatToggle" type="button" aria-controls="aiChatPanel" aria-expanded="false">
       <i class="fas fa-message" aria-hidden="true"></i>
       <span>Ask AI</span>
@@ -846,7 +227,7 @@
       </form>
     </div>
   </aside>
-  <footer>
+<footer>
     <div class="footer-content">
       <div class="footer-logo">Elly</div>
       <p>&copy; <span id="year"></span> Elly | Software Engineer</p>
@@ -857,58 +238,8 @@
         <a href="https://x.com/OkelloElly018" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
       </div>
     </div>
-    <a href="#home" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+    <a href="#main" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
   </footer>
-
-  <div class="modal" id="modal-leanlight" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="leanlight-title">
-    <div class="modal-content" tabindex="-1">
-      <button class="modal-close" data-modal-close aria-label="Close case study">&times;</button>
-      <h3 id="leanlight-title">Leanlight Case Study</h3>
-      <p><strong>Challenge:</strong> Students needed a clean path to curated content and progress tracking.</p>
-      <p><strong>Solution:</strong> Built a structured learning dashboard with easy navigation and progress cues.</p>
-      <p><strong>Impact:</strong> Clearer learning flow and better focus on key lessons.</p>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-smartwaste" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="smartwaste-title">
-    <div class="modal-content" tabindex="-1">
-      <button class="modal-close" data-modal-close aria-label="Close case study">&times;</button>
-      <h3 id="smartwaste-title">Smartwaste Case Study</h3>
-      <p><strong>Challenge:</strong> Make waste disposal easier to track while giving users and admins clearer visibility.</p>
-      <p><strong>Solution:</strong> Built a full-stack MVP with bin logging, reward mechanics, impact tracking, and an admin overview.</p>
-      <p><strong>Impact:</strong> Encourages better disposal habits with a more structured and measurable workflow.</p>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-chairman" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="chairman-title">
-    <div class="modal-content" tabindex="-1">
-      <button class="modal-close" data-modal-close aria-label="Close case study">&times;</button>
-      <h3 id="chairman-title">Chairman.Official Platform Case Study</h3>
-      <p><strong>Challenge:</strong> Create a polished personal platform for leadership communication, public updates, and visible work.</p>
-      <p><strong>Solution:</strong> Built an in-progress Next.js platform for statements, projects, news updates, and public-facing storytelling.</p>
-      <p><strong>Impact:</strong> Establishes a strong personal brand surface for official communication and long-term platform growth.</p>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-teachable" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="teachable-title">
-    <div class="modal-content" tabindex="-1">
-      <button class="modal-close" data-modal-close aria-label="Close case study">&times;</button>
-      <h3 id="teachable-title">Teachable Machine Case Study</h3>
-      <p><strong>Challenge:</strong> Make AI feel approachable with an interactive demo.</p>
-      <p><strong>Solution:</strong> Built a lightweight interface that showcases live image classification.</p>
-      <p><strong>Impact:</strong> Immediate understanding of ML concepts for non-technical users.</p>
-    </div>
-  </div>
-
-  <div class="modal" id="modal-valentine" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="valentine-title">
-    <div class="modal-content" tabindex="-1">
-      <button class="modal-close" data-modal-close aria-label="Close case study">&times;</button>
-      <h3 id="valentine-title">Be My Valentine Case Study</h3>
-      <p><strong>Challenge:</strong> Create a playful, shareable user experience.</p>
-      <p><strong>Solution:</strong> Designed a fun interaction loop with delightful visuals.</p>
-      <p><strong>Impact:</strong> High engagement and social sharing.</p>
-    </div>
-  </div>
 
   <script>document.documentElement.classList.add('js');</script>
   <script type="module" src="/src/main.js"></script>

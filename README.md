@@ -4,46 +4,34 @@ A modern, responsive portfolio website showcasing my work as a Software Engineer
 
 ## Features
 
-- 🎨 Modern dark/light theme with teal + amber accent
+- 🎨 Multi-page portfolio with a shared dark interface and luminous cyan-to-amber accents
 - ⌨️ Animated typewriter effect with creative rotating separators
 - 📱 Fully responsive design
 - 🌐 SEO optimized
-- 🎓 Education section with timeline
-- 💼 Experience section with timeline
-- 🎯 Featured projects with case study modals
-- 💼 Services section (Web, Backend, AI, Cloud, Data, Mobile, Desktop, Consulting)
+- 🎓 Dedicated About and Experience pages
+- 🎯 Dedicated Projects page with category filters and case-study modals
+- 💼 Dedicated Services page (Web, Backend, AI, Cloud, Data, Mobile, Desktop, Consulting)
 - 📄 CV/Resume download
-- 📬 Contact form with social links
-- ✨ Highlights, proof strip, current focus, and call-to-action sections
+- 📬 Dedicated Contact page with social links and contact form
+- ✨ Highlights, proof strip, and core-technology dispatch on the homepage
 - 🧭 Scroll reveal animations with reduced-motion support
 - 🧩 Project case study modals
-- 💬 Testimonials section
 - 🧪 Project filter chips and skills depth bars
 - 🧰 Brand/tool strip and delivery process section
 - 🧭 SEO helpers (sitemap + robots) and social preview image
 - 🧷 Custom favicon and Apple touch icon
 - ✅ Contact form status with aria-live support
-- 🤖 AI assistant knowledge base for recruiters
+- 🤖 AI assistant available from every page
 
-## Sections
+## Pages
 
-- **Home** - Hero with profile image and typewriter effect
-- **About** - Personal introduction, identity line, and expanded skills grid
-- **Highlights** - Quick proof and focus areas
-- **Proof** - Impact snapshots
-- **Education** - Academic background (St. Joseph's School Rapogi 2020-2023, Zetech University 2025-2027)
-- **Experience** - Work history including Front-End Engineering Intern at Flyrank
-- **Currently** - Focus, availability, and working areas
-- **Services** - What I can do for you (Web, Backend, AI, Cloud, Data, Mobile, Desktop, Consulting)
-- **Tech Stack & Tools** - Categorized technology tags (Languages, Web & Mobile, Data, AI & Innovation Tools, Blockchain)
-- **Projects** - Featured projects with filter chips and case studies
-- **Brand Strip** - Tools and platforms
-- **Work Process** - Delivery stages
-- **Skills Depth** - Visual skill proficiency bars
-- **Testimonials** - Feedback highlights
-- **Resume** - Download resume
-- **CTA** - Project call-to-action
-- **Contact** - Get in touch
+- **Home** (`index.html`) - Hero, profile ring, project/contact actions, proof points, and core technology dispatch
+- **About** (`about.html`) - Personal introduction, skills, current focus, and availability
+- **Experience** (`experience.html`) - Education and professional timeline
+- **Services** (`services.html`) - Services, delivery process, skill depth, and tools
+- **Projects** (`projects.html`) - Filterable case studies and featured work
+- **Contact** (`contact.html`) - Resume download and contact form
+- **Leanlight case study** (`projects/leanlight.html`) - Standalone project detail page
 
 ## Technologies Used
 
@@ -106,16 +94,13 @@ To run this project locally:
 git clone https://github.com/Elly739/Portfolio.git
 ```
 
-2. Open `index.html` in your browser
-
-Or use a local server:
+2. Install dependencies and run the local development server:
 ```bash
-# Using Python
-python -m http.server
-
-# Using Node.js
-npx serve
+npm install
+npm run dev
 ```
+
+Vite serves each page at its matching `.html` path and builds all portfolio pages for static hosting with `npm run build`.
 
 ## Connect With Me
 
